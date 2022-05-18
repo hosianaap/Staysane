@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 // route CRUD home
 Route::get('/home','HomeController@home');
-Route::get('/home/role','HomeController@role');
+Route::get('/role','RoleController@role');
+Route::get('/role/patient','RoleController@patient');
