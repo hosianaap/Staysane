@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">Patient</h5>
+                                            <h5 class="card-title">@yield('Card 1')</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">Psychologist</h5>
+                                            <h5 class="card-title">@yield('Card 2')</h5>
                                         </div>
                                     </div>
                                 </div>
