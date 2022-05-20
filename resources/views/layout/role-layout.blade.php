@@ -1,110 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <title>@yield('mainTitle')</title>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>@yield('title')</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
-    <!-- Template Main CSS File -->
-    <link href="css/role.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<style>
+    .login {
+        min-height: 100vh;
+    }
+
+    .bg-image {
+        background-image: url("{{ asset('images/sidepic.png') }}");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-heading {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 45px;
+    }
+
+    .card {
+        border: 0;
+        box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+        -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-title {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 19px;
+    }
+
+    a:link,
+    :visited,
+    :hover,
+    :active {
+        color: black;
+        text-decoration: none;
+    }
+
+</style>
+
 <body>
-    <section class="vh-100">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6 px-0 d-none d-sm-block">
-                    <img src="{{ asset('images/sidepic.png') }}" alt="Login image" class="w-100 vh-100"
-                        style="object-fit: cover; object-position: left;">
-                </div>
-
-                <div class="col-sm-6 text-black">
-                    {{-- <div class="px-5 ms-xl-4">
-                        <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-                        <span class="h1 fw-bold mb-0">Logo</span>
-                    </div> --}}
-
-                    <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
-                        <form style="width: 23rem;">
-
-                            <h1 class="mb-3 pb-3" style="letter-spacing: 1px;">Who Are You?</h1>
-
-                            <div class="card mb-3" style="max-width: 400px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('images/patient.png') }}"
-                                            class="img-fluid rounded-start d-block align-items-center  " alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">@yield('Card 1')</h5>
+    <div class="container-fluid ps-md-0">
+        <div class="row g-0">
+            <!-- Sidepic Image -->
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <!-- Title -->
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <h3 class="login-heading mb-4">@yield('title')</h3>
+                            </div>
+                        </div>
+                        <!-- Patient Role Card -->
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <a href="/role/patient/login">
+                                    <div class="card">
+                                        <div class="row g-0 mt-2 mb-2 ml-2">
+                                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                                                <img src="{{ asset('images/patient.png') }}" class="card-img-top"
+                                                    alt="Patient">
+                                            </div>
+                                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mt-3">@yield('patientCard')</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
-
-                            <div class="card mb-3" style="max-width: 400px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('images/psychologist.png') }}"
-                                            class="img-fluid rounded-start d-block align-items-center  h-70" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">@yield('Card 2')</h5>
+                        </div>
+                        <!-- Doctor Role Card -->
+                        <div class="row mt-3">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <a href="/role/doctor/login">
+                                    <div class="card">
+                                        <div class="row g-0 mt-2 mb-2 ml-2">
+                                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                                                <img src="{{ asset('images/psychologist.png') }}"
+                                                    class="card-img-top" alt="Doctor">
+                                            </div>
+                                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mt-3 ">@yield('doctorCard')</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
-                            {{-- <div class="form-outline mb-4">
-                                <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                                <label class="form-label" for="form2Example18">Email address</label>
-                            </div>
-
-                            <div class="form-outline mb-4">
-                                <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                                <label class="form-label" for="form2Example28">Password</label>
-                            </div>
-
-                            <div class="pt-1 mb-4">
-                                <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
-                            </div>
-
-                            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-                            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p> --}}
-
-                        </form>
-
+                        </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>
