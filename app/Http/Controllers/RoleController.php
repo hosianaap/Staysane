@@ -11,7 +11,15 @@ class RoleController extends Controller
     	return view('role.role');
     }
 
-    public function patient(){
-    	return view('role.patient');
+    public function patientLogin(){
+    	return view('role.patient-login');
     }
+
+    public function patientRegister(){
+    	return view('role.patient-registrasi');
+    }
+    public function doctorLogin(){
+    	return view('role.doctor-login');
+    }
+
 }
