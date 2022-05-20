@@ -46,7 +46,7 @@
           <h1>@yield('heading')</h1>
           <h5>@yield('description')</h5>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">@yield('button')</a>
+            <a href="/role" class="btn-get-started scrollto">@yield('button')</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
