@@ -1,5 +1,6 @@
 @extends('layout.role-layout')
 
-@section('heading', 'Start here')
-@section('Card 1', 'Patient')
-@section('Card 2', 'Psychologist')
+@section('mainTitle', 'Choose Your Role!')
+@section('title', 'Who Are You?')
+@section('patientCard', 'Patient')
+@section('doctorCard', 'Doctor')
