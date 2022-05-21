@@ -134,12 +134,14 @@
                                                         <i class="fa fa-eye-slash mx-1 togglePassword"></i>
                                                     </span>
                                                 </div>
+                                                <p id="pw-login-message" class="text-danger mt-1"> </p>
                                             </div>
                                         </div>
                                         <button type="button"
                                             class="confirm btn btn-primary btn-block rounded-pill shadow-sm">
                                             @yield('signIn') </button>
-                                            <a href="/role" class="btn btn-info btn-block rounded-pill shadow-sm">@yield('back')</a>
+                                        <a href="/role"
+                                            class="btn btn-info btn-block rounded-pill shadow-sm">@yield('back')</a>
                                     </form>
                                 </div>
 
@@ -150,20 +152,21 @@
                                         <!-- Name -->
                                         <div class="form-group">
                                             <label for="name">@yield('name')</label>
-                                            <input type="text" name="name" placeholder="Enter your name" required
-                                                class="form-control">
+                                            <input type="text" id="name" name="name" placeholder="Enter your name"
+                                                class="form-control" required>
+                                            <p id="name-message" class="text-danger  mt-1"></p>
                                         </div>
                                         <!-- Email -->
                                         <div class="form-group">
                                             <label for="email">@yield('email')</label>
-                                            <input type="text" name="username" placeholder="Enter your email address"
-                                                required class="form-control">
+                                            <input type="text" id="email" name="email"
+                                                placeholder="Enter your email address" required class="form-control">
                                         </div>
                                         <!-- Username -->
                                         <div class="form-group">
                                             <label for="username">@yield('username')</label>
-                                            <input type="text" name="username" placeholder="Enter your username"
-                                                required class="form-control">
+                                            <input type="text" id="username" name="username"
+                                                placeholder="Enter your username" required class="form-control">
                                         </div>
                                         <!-- DoB -->
                                         <div class="form-group">
@@ -189,10 +192,112 @@
 
 
 
-                                        <!-- Address -->
+                                        <!-- City -->
                                         <div class="form-group">
-                                            <label for="address">@yield('address')</label>
-                                            <input type="text" name="address" placeholder="Enter your address" required class="form-control">
+                                            <label for="city">@yield('city')</label>
+                                            <select id="city" name="city" placeholder="Enter your city" required
+                                                class="form-control">
+                                                <option selected> Choose your city ... </option>
+                                                <option> Ambon </option>
+                                                <option> Balikpapan </option>
+                                                <option> Banda Aceh </option>
+                                                <option> Bandar Lampung </option>
+                                                <option> Bandung </option>
+                                                <option> Banjar </option>
+                                                <option>Banjarbaru</option>
+                                                <option>Banjarmasin</option>
+                                                <option>Batam </option>
+                                                <option> Batu</option>
+                                                <option> Baubau</option>
+                                                <option>Bekasi </option>
+                                                <option> Bengkulu</option>
+                                                <option> Bima</option>
+                                                <option>Binjai </option>
+                                                <option>Bitung </option>
+                                                <option>Blitar </option>
+                                                <option>Bogor </option>
+                                                <option>Bontang </option>
+                                                <option>Bukittinggi </option>
+                                                <option>Cilegon </option>
+                                                <option>Cimahi </option>
+                                                <option>Cirebon </option>
+                                                <option>Denpasar </option>
+                                                <option>Depok</option>
+                                                <option>Dumai</option>
+                                                <option>Gorontalo </option>
+                                                <option>Gunungsitoli </option>
+                                                <option>Jakarta Barat </option>
+                                                <option>Jakarta Pusat </option>
+                                                <option>Jakarta Selatan </option>
+                                                <option> Jakarta Timur</option>
+                                                <option>Jakarta Utara </option>
+                                                <option> Jambi</option>
+                                                <option>Jayapura </option>
+                                                <option>Kediri </option>
+                                                <option>Kendari </option>
+                                                <option> Kotamobagu</option>
+                                                <option> Kupang </option>
+                                                <option> Langsa</option>
+                                                <option>Lhokseumawe </option>
+                                                <option>Lubuklinggau </option>
+                                                <option>Madiun </option>
+                                                <option>Magelang </option>
+                                                <option>Makassar </option>
+                                                <option> Malang </option>
+                                                <option>Manado </option>
+                                                <option> Mataram </option>
+                                                <option>Medan </option>
+                                                <option> Metro</option>
+                                                <option>Mojokerto </option>
+                                                <option>Padang </option>
+                                                <option>Padang Panjang </option>
+                                                <option>Padang Sidempuan </option>
+                                                <option>Pagar Alam </option>
+                                                <option>Palangka Raya </option>
+                                                <option>Palembang </option>
+                                                <option>Palopo </option>
+                                                <option>Palu </option>
+                                                <option>Pangkalpinang </option>
+                                                <option>Parepare </option>
+                                                <option>Pariaman </option>
+                                                <option>Pasuruan </option>
+                                                <option>Payakumbuh </option>
+                                                <option> Pekalongan</option>
+                                                <option> Pekanbaru</option>
+                                                <option>Pematangsiantar </option>
+                                                <option>Pontianak </option>
+                                                <option> Prabumulih</option>
+                                                <option>Probolinggo </option>
+                                                <option>Sabang </option>
+                                                <option>Salatiga </option>
+                                                <option> Samarinda</option>
+                                                <option>Sawahlunto </option>
+                                                <option>Semarang </option>
+                                                <option> Serang</option>
+                                                <option>Sibolga </option>
+                                                <option>Singkawang </option>
+                                                <option> Solok </option>
+                                                <option>Sorong </option>
+                                                <option>Subulussalam </option>
+                                                <option> Sukabumi</option>
+                                                <option> Sungai Penuh</option>
+                                                <option>Surabaya </option>
+                                                <option> Surakarta</option>
+                                                <option>Tangerang Selatan </option>
+                                                <option>Tangerang </option>
+                                                <option> Tanjungbalai</option>
+                                                <option>Tanjungpinang </option>
+                                                <option>Tarakan </option>
+                                                <option> Tasikmalaya</option>
+                                                <option>Tebing Tinggi </option>
+                                                <option> Tegal</option>
+                                                <option>Ternate </option>
+                                                <option>Tidore Kepulauan </option>
+                                                <option>Tomohon </option>
+                                                <option> Tual</option>
+                                                <option>Yogyakarta </option>
+                                            </select>
+                                            <p id="city-message" class="text-danger  mt-1"> </p>
                                         </div>
 
                                         <!-- Password -->
@@ -206,12 +311,14 @@
                                                         <i class="fa fa-eye-slash mx-1 togglePW"></i>
                                                     </span>
                                                 </div>
+                                                <p id="password-message" class="text-danger  mt-1"> </p>
                                             </div>
                                         </div>
-                                        <button type="button"
-                                            class="confirm btn btn-primary btn-block rounded-pill shadow-sm">
+                                        <button type="submit" id="signUp"
+                                            class="btn btn-primary btn-block rounded-pill shadow-sm">
                                             @yield('signUp') </button>
-                                            <a href="/role" class="btn btn-info btn-block rounded-pill shadow-sm">@yield('back')</a>
+                                        <a href="/role"
+                                            class="btn btn-info btn-block rounded-pill shadow-sm">@yield('back')</a>
 
                                     </form>
                                 </div>
@@ -225,6 +332,7 @@
     </div>
 
     <script>
+        // Password SignIn
         const togglePassword = document.querySelector(".togglePassword");
         const password = document.querySelector("#password");
 
@@ -238,6 +346,7 @@
             this.classList.toggle('fa fa-eye-slash');
         });
 
+        // Password SignUp
         const togglePW = document.querySelector(".togglePW");
         const pw = document.querySelector("#pw");
 
@@ -249,6 +358,20 @@
             // toggle the eye icon
             this.classList.toggle('fa fa-eye');
             this.classList.toggle('fa fa-eye-slash');
+        });
+
+        // Submit
+        $("signUp").click(function(event) {
+            // Validasi Nama
+            var inputName = $("#name").val();
+            var letters = /^[a-zA-Z]*$/;
+            if (inputName == "") {
+                $("#name-message").text("Name must be filled");
+                event.preventDefault();
+            } else if (!inputName.match(letters) || inputName.length < 1) {
+                $("#name-message").text("Name must be in letters and more than 1 character");
+                event.preventDefault();
+            }
         });
     </script>
 </body>
