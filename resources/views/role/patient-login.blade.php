@@ -9,7 +9,7 @@
 @section('name', 'Name')
 @section('email', 'Email')
 @section('DoB', 'Date of Birth')
-@section('address', 'Address')
+@section('city', 'City')
 @section('back', 'Back')
 
 
