@@ -197,6 +197,7 @@
     </div>
 
     <script>
+        // Password Sign In
         const togglePassword = document.querySelector(".togglePassword");
         const password = document.querySelector("#password");
 
@@ -210,6 +211,7 @@
             this.classList.toggle('fa fa-eye-slash');
         });
 
+        // Password Sign Up
         const togglePW = document.querySelector(".togglePW");
         const pw = document.querySelector("#pw");
 
