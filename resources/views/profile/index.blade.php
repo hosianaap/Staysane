@@ -4,31 +4,27 @@
 	<br>
     <br>
     <style>
-        th {
-            width: 15%;
-            text-align: center;
-            height: 1cm;
-            font-size: 24px
+        .kolom {
+            font-size: 32px;
+            color: rgba(35, 31, 32, 0.5);
         }
-        td{
-            font-size: 18px
+        p{
+            font-size: 20px
+        }
+        h2{
+            margin-top: 12%
         }
     </style>
-    <div class="container">
-    </div>
-    <br>
-	<table border="1">
-		<tr>
-			<th>Nama</th>
-			<th>SIPP</th>
-			<th>Email</th>
-		</tr>
-		 @foreach($listakunpsikolog as $d)
-		<tr>
-			<th>{{ $d->namapsikolog }}</th>
-			<th>{{ $d->sipp }}</th>
-            <th>{{ $d->emailpsikolog }}</th>
-		</tr>
+
+        @foreach($listakunpsikolog as $d)
+        <h2>
+		<p class="kolom">Nama:</p>
+        <p>{{ $d->namapsikolog }}</p><br>
+        <p class="kolom">SIPP:</p>
+        <p>{{ $d->sipp }}</p><br>
+			<p class="kolom">Email:</p>
+            <p>{{ $d->emailpsikolog }}</p>
+        </h2>
 		@endforeach
     @endsection
 
