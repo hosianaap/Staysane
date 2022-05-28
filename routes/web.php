@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // route CRUD home
-Route::get('/home','HomeController@home');
+Route::get('/','HomeController@home');
 Route::get('/role','RoleController@role');
 Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
@@ -25,3 +21,4 @@ Route::get('/all','allController@all');
 
 //route CRUD profile psikolog
 Route::get('/profile','ProfileController@profilPsikolog');
+Route::get('/role/patient/payment','RoleController@patientPayment');
