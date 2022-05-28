@@ -149,6 +149,17 @@
                                 <div id="nav-tab-signUp" class="tab-pane fade">
                                     {{-- <p class="alert alert-success">Some text success or error</p> --}}
                                     <form role="form">
+                                        <!-- Role -->
+                                        <div class="form-group">
+                                            <label for="role">@yield('role')</label>
+                                            <select id="role" name="role" placeholder="Enter your role" required
+                                                class="form-control">
+                                                <option selected> Choose your role </option>
+                                                <option> Doctor </option>
+                                                <option> Patient </option>
+                                            </select>
+                                            <p id="role-message" class="text-danger  mt-1"> </p>
+                                        </div>
                                         <!-- Name -->
                                         <div class="form-group">
                                             <label for="name">@yield('name')</label>
