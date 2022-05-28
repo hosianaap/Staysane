@@ -17,8 +17,11 @@ Route::get('/role','RoleController@role');
 Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
 Route::get('/role/doctor/login','RoleController@doctorLogin');
-Route::get('/all','allController@all');
 
-//route CRUD profile psikolog
-Route::get('/profile','ProfileController@profilPsikolog');
+//route CRUD psikolog
+Route::get('/role/doctor/profile','RoleController@profilPsikolog');
+
+
+//route CRUD patient
 Route::get('/role/patient/payment','RoleController@patientPayment');
+Route::get('/role/patient/doctor','RoleController@infoPsikolog');

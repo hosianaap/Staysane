@@ -1,5 +1,5 @@
-@extends('layout.all-layout')
-   @section('konten')
+@extends('layout.main-psikolog-layout')
+   @section('content')
 
 	<br>
     <br>
@@ -10,9 +10,6 @@
         }
         p{
             font-size: 20px
-        }
-        h2{
-            margin-top: 12%
         }
     </style>
 
