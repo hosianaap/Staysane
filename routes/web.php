@@ -21,4 +21,4 @@ Route::get('/all','allController@all');
 
 //route CRUD profile psikolog
 Route::get('/profile','ProfileController@profilPsikolog');
-Route::get('/role/patient/payment','RoleController@patientPayment');
+Route::get('/patient/payment','RoleController@patientPayment');
