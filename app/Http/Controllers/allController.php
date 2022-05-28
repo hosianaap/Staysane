@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class allController extends Controller
 {
     public function all(){
-    	return view('all');
+    	return view('layout.all-layout');
     }
 }
