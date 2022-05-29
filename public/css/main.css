@@ -96,13 +96,17 @@
     color: #fff;
 }
 
-#main {
-    position: fixed;
+  #main {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 82px 40px 45px 429px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-left: 429px;
+    padding-top: 54px;
+    padding-right: 40px;
     background: linear-gradient(112.4deg, #FFEEEE 9.84%, #E7DFFF 73.46%);
 }
 

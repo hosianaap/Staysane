@@ -36,14 +36,16 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="/" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">StaySane</a></h1>
+        <a href="/" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">
+            <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light">StaySane</h1>
+        </a>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="/home" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="/role/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i> <span>Doctor</span></a></li>
+          <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i> <span>Doctor</span></a></li>
           <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i> <span>Chat</span></a></li>
           <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i> <span>Profie</span></a></li>
         </ul>
