@@ -7,9 +7,9 @@
         <div class="col-lg-7 pb-5 pe-lg-5">
             <div class="row" id="paient-pay">
                 <div class="row m-0">
-                    <div class="d-flex justify-content- align-content-center">
+                    <div class="d-flex justify-content-start align-content-center">
                         <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
-                        <h3><strong>Dr. Nike Ardilla, M.Psi.</strong></h3>
+                        <div class = "col docname"><h3><strong>Dr. Nike Ardilla, M.Psi.</strong></h3></div>
                     </div>
                 </div>
                 <div class="row m-0 detail-order">
@@ -31,7 +31,7 @@
                         <div class="d-flex justify-content-between mb-3">
                             <p class="textmuted fw-bold">Total</p>
                             <div class="d-flex align-text-top ">
-                                <span class="h4">Rp 15.000,00</span>
+                                <span class="h5">Rp 15.000,00</span>
                             </div>
                         </div>
                     </div>
