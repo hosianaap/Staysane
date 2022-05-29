@@ -160,7 +160,7 @@
                                         <div class="candidate-list-details">
                                             <div class="candidate-list-info">
                                                 <div class="candidate-list-title">
-                                                    <h5 class="mb-0"><a href="#">Nichole Haynes</a></h5>
+                                                    <h5 class="mb-0"><a href="#">Dr. Addie Larue, M.Psi.</a></h5>
                                                 </div>
                                                 <div class="candidate-list-option">
                                                     <ul class="list-unstyled">
