@@ -38,4 +38,8 @@ class RoleController extends Controller
     	return view('psikolog.profile',['listakunpsikolog' => $akunpsikolog]);
     }
 
+    public function listPsikolog(){
+    	return view('psikolog.list-psikolog');
+    }
+
 }

@@ -28,3 +28,6 @@ Route::get('/role/patient/doctor','RoleController@infoPsikolog');
 //route CRUD profile psikolog
 Route::get('/profile','ProfileController@profilPsikolog');
 Route::get('/patient/payment','RoleController@patientPayment');
+
+//route CRUD list
+Route::get('/list/psikolog','RoleController@listPsikolog');
