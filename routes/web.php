@@ -28,3 +28,7 @@ Route::get('/role/patient/doctor','RoleController@infoPsikolog');
 //route CRUD profile psikolog
 Route::get('/profile','ProfileController@profilPsikolog');
 Route::get('/patient/payment','RoleController@patientPayment');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
