@@ -13,13 +13,15 @@
     padding: 0 15px;
     background: #D0E1D4;
     overflow-y: auto;
-  }
-  #header .profile img {
+}
+
+#header .profile img {
     margin: 15px auto;
     display: block;
     width: 70px;
-  }
-  #header .profile h1 {
+}
+
+#header .profile h1 {
     font-size: 24px;
     margin: 0;
     padding: 0;
@@ -27,28 +29,35 @@
     -moz-text-align-last: center;
     text-align-last: center;
     font-family: "Poppins", sans-serif;
-  }
-  #header .profile h1 a, #header .profile h1 a:hover {
+}
+
+#header .profile h1 a,
+#header .profile h1 a:hover {
     color: #fff;
     text-decoration: none;
-  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 .nav-menu {
     padding: 60px 0 0 0;
-  }
-  .nav-menu * {
+}
+
+.nav-menu * {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  .nav-menu > ul > li {
+}
+
+.nav-menu>ul>li {
     position: relative;
     white-space: nowrap;
-  }
-  .nav-menu a, .nav-menu a:focus {
+}
+
+.nav-menu a,
+.nav-menu a:focus {
     display: flex;
     align-items: center;
     color: #a8a9b4;
@@ -56,13 +65,19 @@
     margin-bottom: 8px;
     transition: 0.3s;
     font-size: 18px;
-  }
-  .nav-menu a i, .nav-menu a:focus i {
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
     font-size: 24px;
     padding-right: 8px;
     color: #6f7180;
-  }
-  .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover>a {
     text-decoration: none;
     color: #fff;
     width: 327px;
@@ -72,26 +87,35 @@
     background: #536D6C;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.25);
     border-radius: 65px;
-  }
-  .nav-menu a:hover i, .nav-menu .active i, .nav-menu .active:focus i, .nav-menu li:hover > a i {
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover>a i {
     color: #fff;
-  }
+}
 
   #main {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 82px 40px 45px 429px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-left: 429px;
+    padding-top: 54px;
+    padding-right: 40px;
     background: linear-gradient(112.4deg, #FFEEEE 9.84%, #E7DFFF 73.46%);
-  }
+}
 
-  section {
+section {
     padding: 60px 0;
     overflow: hidden;
-  }
-  .payment-bttn{
+}
+
+.payment-bttn {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -103,30 +127,284 @@
     left: 123px;
     top: 566px;
     background: #536D6C;
-    color:#ffffff;
+    color: #ffffff;
     border-radius: 36px;
-  }
-  .pay-input{
-      background: none;
-      border-bottom-color: #1f1f1f;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-  }
-  #docpic{
+}
+
+.pay-input {
+    background: none;
+    border-bottom-color: #1f1f1f;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#docpic {
     width: 80px;
     height: 80px;
     border-radius: 18px;
     right: 0;
-  }
-  .detail-order{
-      padding-top: 30px;
-  }
-  #patientpay{
-      padding-left: 20px;
-  }
-  .docname{
-      padding-top: 24px;
-      padding-left: 32px;
-  }
+}
 
+.detail-order {
+    padding-top: 30px;
+}
+
+#patientpay {
+    padding-left: 20px;
+}
+
+.docname {
+    padding-top: 24px;
+    padding-left: 32px;
+}
+
+/* list psikolog */
+body {
+    background-color: #f8f9fa !important
+}
+
+.p-4 {
+    padding: 1.5rem !important;
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+/* user-dashboard-info-box */
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+
+.user-dashboard-info-box .candidates-list .thumb img {
+    width: 50px;
+    height: 50px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.user-dashboard-info-box .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.user-dashboard-info-box .candidates-list td {
+    vertical-align: middle;
+}
+
+.user-dashboard-info-box td li {
+    margin: 0 4px;
+}
+
+.user-dashboard-info-box .table thead th {
+    border-bottom: none;
+}
+
+.table.manage-candidates-top th {
+    border: 0;
+}
+
+.user-dashboard-info-box .candidate-list-favourite-time .candidate-list-favourite {
+    margin-bottom: 10px;
+}
+
+.table.manage-candidates-top {
+    min-width: 650px;
+}
+
+.user-dashboard-info-box .candidate-list-details ul {
+    color: #969696;
+}
+
+/* Candidate List */
+.candidate-list {
+    background: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.candidate-list:hover {
+    -webkit-box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    position: relative;
+    z-index: 99;
+}
+
+.candidate-list:hover a.candidate-list-favourite {
+    color: #e74c3c;
+    -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+    box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+}
+
+.candidate-list .candidate-list-image {
+    margin-right: 25px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
+    border: none;
+}
+
+.candidate-list .candidate-list-image img {
+    width: 40px;
+    height: 40px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.candidate-list-title {
+    margin-bottom: 5px;
+}
+
+.candidate-list-details ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+
+.candidate-list-details ul li {
+    margin: 5px 10px 5px 0px;
+    font-size: 13px;
+}
+
+.candidate-list .candidate-list-favourite-time {
+    margin-left: auto;
+    text-align: center;
+    font-size: 13px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 90px;
+    flex: 0 0 90px;
+}
+
+.candidate-list .candidate-list-favourite-time span {
+    display: block;
+    margin: 0 auto;
+}
+
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 1px solid #eeeeee;
+    border-radius: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #646f79;
+}
+
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite:hover {
+    background: #ffffff;
+    color: #e74c3c;
+}
+
+.candidate-banner .candidate-list:hover {
+    position: inherit;
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    z-index: inherit;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.p-4 {
+    padding: 1.5rem !important;
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+
+/* search */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+body {
+    background-color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.height {
+    height: 8vh;
+}
+
+
+.search {
+    position: relative;
+    box-shadow: 0 0 10px rgba(51, 51, 51, .1);
+
+}
+
+.search input {
+
+    height: 50px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+
+
+}
+
+.search input:focus {
+
+    box-shadow: none;
+    border: 2px solid #34494C;
+
+}
+
+.search .fa-search {
+
+    position: absolute;
+    top: 20px;
+    left: 16px;
+
+}
+
+.search button {
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 110px;
+    background:#34494C;
+
+}

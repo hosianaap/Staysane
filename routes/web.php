@@ -13,22 +13,25 @@
 
 // route CRUD home
 Route::get('/','HomeController@home');
+Route::get('/home','HomeController@home');
 Route::get('/role','RoleController@role');
 Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
 Route::get('/role/doctor/login','RoleController@doctorLogin');
 
 //route CRUD psikolog
-Route::get('/role/doctor/profile','RoleController@profilPsikolog');
+Route::get('/doctor/profile','RoleController@profilPsikolog');
 
 
 //route CRUD patient
-Route::get('/role/patient/payment','RoleController@patientPayment');
-Route::get('/role/patient/doctor','RoleController@infoPsikolog');
-//route CRUD profile psikolog
-Route::get('/profile','ProfileController@profilPsikolog');
 Route::get('/patient/payment','RoleController@patientPayment');
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+//route CRUD list
+Route::get('/list/psikolog', 'RoleController@listPsikolog');
+Route::get('/patient/doctor-info','RoleController@infoPsikolog');
+>>>>>>> 158bc1fa61d8897647bc75bcf75662754ce8f0fa
