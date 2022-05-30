@@ -9,11 +9,3 @@
 @section('name', 'Name')
 @section('email', 'Email')
 @section('back', 'Back')
-
-
-
-
-
-
-
-
