@@ -1,6 +1,19 @@
 @extends('layout.main-patient-layout')
 
 @section('mainTitle', 'Information')
+@section('navbar-actived')
+    <nav id="navbar" class="nav-menu navbar">
+        <ul>
+            <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
+            <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i>
+                    <span>Doctor</span></a></li>
+            <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
+                    <span>Chat</span></a></li>
+            <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
+                    <span>Profie</span></a></li>
+        </ul>
+    </nav><!-- .nav-menu -->
+@endsection
 @section('content')
     <div class="container">
         <div class="row m-0">

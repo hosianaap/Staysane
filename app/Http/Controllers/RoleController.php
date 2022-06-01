@@ -18,28 +18,10 @@ class RoleController extends Controller
     public function patientPayment(){
     	return view('patient.payment');
     }
-    public function infoPsikolog()
-    {
-    	// mengambil data dari table psikolog
-    	$psikolog = DB::table('listakunpsikolog')->get();
-    	// mengirim data psikolog ke view index
-    	return view('psikolog.information',['listakunpsikolog' => $psikolog]);
-    }
-
     //role Doctor
     public function doctorLogin(){
     	return view('role.doctor-login');
     }
-    public function profilPsikolog()
-    {
-    	// mengambil data dari table psikolog
-    	$akunpsikolog = DB::table('listakunpsikolog')->get();
-    	// mengirim data psikolog ke view index
-    	return view('psikolog.profile',['listakunpsikolog' => $akunpsikolog]);
-    }
 
-    public function listPsikolog(){
-    	return view('psikolog.list-psikolog');
-    }
 
 }

@@ -42,14 +42,8 @@
         </a>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="/doctor/patient" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i> <span>Patient</span></a></li>
-          <li><a href="/doctor/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i> <span>Chat</span></a></li>
-          <li><a href="/doctor/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i> <span>Profie</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+      @section('navbar-actived')
+      @show
     </div>
   </header><!-- End Header -->
 
