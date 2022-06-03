@@ -1,9 +1,9 @@
-@extends('layout.main-psikolog-layout')
+@extends('layout.main-patient-layout')
 @section('mainTitle', 'Patient Profile')
 @section('navbar-actived')
     <nav id="navbar" class="nav-menu navbar">
         <ul>
-            <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
+            <li><a href="/home" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
             <li><a href="/patient/doctor" class="btn nav-link " role="button"><i class="bi bi-bag-plus"></i>
                     <span>Doctor</span></a></li>
             <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
@@ -20,12 +20,12 @@
     <br>
     <style>
         .kolom {
-            font-size: 32px;
+            font-size: 28px;
             color: rgba(35, 31, 32, 0.5);
         }
 
         p {
-            font-size: 20px
+            font-size: 18px
         }
 
     </style>
@@ -34,25 +34,33 @@
         <div class="d-flex justify-content-start align-content-center">
             <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
             <div class="col docname">
-                <h3><strong>Dr. Nike Ardilla, M.Psi.</strong></h3>
+                <h3><strong>Alex Nikiforov</strong></h3>
+                <br>
+                <br>
             </div>
         </div>
     </div>
-    <div class="row m-0 detail-order">
-        <strong>
-            <h4>Detail Order</h4>
-        </strong>
-        <p>Order ID</p>
+    <div class="row m-0 detail-profile">
+        <h4></h4>
+        <p class="kolom">Nama</p>
         <b>
-            <p>12345</p>
+            <p>Alex Nikiforov</p>
         </b>
-        <p>Consultation Type</p>
+        <p class="kolom">Birth date</p>
         <b>
-            <p>Video Call</p>
+            <p>2001-12-31</p>
         </b>
-        <p>Fee</p>
+        <p class="kolom">Email</p>
         <b>
-            <p>Rp 15.000,00/Meeting</p>
+            <p>alex@gmail.com</p>
+        </b>
+        <p class="kolom">Location</p>
+        <b>
+            <p>Surabaya</p>
+        </b>
+        <p class="kolom">Phone number</p>
+        <b>
+            <p>082141057727</p>
         </b>
         <div class="d-flex" style="padding-top: 40px">
             <a href="/patient/schedule"><div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule

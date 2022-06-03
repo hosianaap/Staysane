@@ -2,6 +2,39 @@
 
 @section('mainTitle', 'Information')
 @section('navbar-actived')
+    <style>
+        .border {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 3px 4px;
+            width: 76px;
+            height: 30px;
+            /* Global/06. Info */
+            background: #17A2B8;
+            border-radius: 40px;
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .border1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 3px 4px;
+            width: 110px;
+            height: 30px;
+            /* Global/06. Info */
+            background: #17A2B8;
+            border-radius: 40px;
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+    </style>
     <nav id="navbar" class="nav-menu navbar">
         <ul>
             <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
@@ -22,33 +55,42 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
-                            <br>
-                            <h3><strong>Dr. Nike Ardilla, M.Psi.</strong></h3>
                         </div>
                     </div>
-                    @foreach($psikolog as $s)
+
                     <div class="row m-0 detail-order">
-                        <h4>Alumnus</h4>
-                        <b><p>{{ $s->alumnus }}</p></b>
-                        <h4>Work Place</h4>
-                        <b><p>{{ $s->workplace }}</p></b>
-                        <h4>Experience</h4>
-                        <b><p>{{ $s->experience }}</p></b>
-                        <h4>SIPP</h4>
-                        <b><p>{{ $s->sipp }}</p></b>
+                        @foreach ($listakunpsikolog as $s)
+                                <h3><strong>{{ $s->namapsikolog }}</strong></h3>
+                                <br>
+                                <br>
+                                <br>
+                        <h5>Alumnus</h5>
+                        <b>
+                            <p>{{ $s->alumnus }}</p>
+                        </b><br>
+                        <h5>Work Place</h5>
+                        <b>
+                            <p>{{ $s->workplace }}</p>
+                        </b><br>
+                        <h5>Experience</h5>
+                        <b>
+                            <p class="border">{{ $s->experience }} years</p>
+                        </b><br>
+                        <h5>SIPP</h5>
+                        <b>
+                            <p class="border1">{{ $s->sipp }}</p>
+                        </b><br>
                     </div>
                     @endforeach
                     <div class="row m-0">
                         <div class="col-12 px-4">
                             <br><br>
                             <div class="d-flex justify-content-between mb-2">
-                                <p class="textmuted">Price</p>
-                                <p class="fs-14 fw-bold">Rp 15.000,00</p>
-                            </div><hr>
+                            </div>
+
                             <div class="d-flex justify-content-between mb-3">
-                                <p class="textmuted fw-bold">Total</p>
+                                <p class="textmuted fw-bold"></p>
                                 <div class="d-flex align-text-top ">
-                                    <span class="h4">Rp 15.000,00</span>
                                 </div>
                             </div>
                         </div>
@@ -60,21 +102,23 @@
                     <div class="col-12 px-0">
                         <div class="row m-0">
                             <div class="col-12 px-4 my-4">
-                                <h1 class="fw-bold">Payment detail</h1>
                             </div>
                             <div class="col-12 px-4">
                                 <div class="d-flexs">
                                     <span class="">
-                                        <p class="text-muted">Your Virtual Account</p>
-                                        <input class="form-control pay-input" type="text" placeholder="1234 5678 9012 3456" >
+                                       <h5>Time</h5>
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row m-0">
+                            <div class="d-flexs" style="padding-right: 20px">
+                                <h5>Consultation Type</h5>
+                            </div>
+                        <div class="row m-0">
                             <div class="d-flex flex-row-reverse" style="padding-right: 20px">
-                                <div class="btn payment-bttn">Proceed
+                                <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
                                 </div>
                             </div>
                         </div>

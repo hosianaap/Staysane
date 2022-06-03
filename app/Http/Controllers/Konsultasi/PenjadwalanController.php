@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class SchedulingController extends Controller
+class PenjadwalanController extends Controller
 {
     //
     public function patientSchedule(){
@@ -14,9 +14,7 @@ class SchedulingController extends Controller
     }
     public function detailPsikolog()
     {
-    	// mengambil data dari table psikolog
-    	$psikolog = DB::table('listakunpsikolog')->get();
-    	// mengirim data psikolog ke view index
-    	return view('psikolog.information',['listakunpsikolog' => $psikolog]);
+    	$listakunpsikolog = DB::table('listakunpsikolog')->get();
+    	return view('patient.information',['listakunpsikolog' => $listakunpsikolog]);
     }
 }

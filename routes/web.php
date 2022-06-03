@@ -21,7 +21,7 @@ Route::get('/home','HomeController@home');
 Route::get('/role','RoleController@role');
 Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
-Route::get('/role/doctor/login','RoleController@doctorLogin');
+Route::get('/role/psikolog/login','RoleController@doctorLogin');
 
 //route Role --> Noverita
 Route::get('/psikolog/profile','Role\ProfilController@profilPsikolog');

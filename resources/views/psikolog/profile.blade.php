@@ -17,24 +17,37 @@
     <br>
     <style>
         .kolom {
-            font-size: 32px;
+            font-size: 28px;
             color: rgba(35, 31, 32, 0.5);
         }
         p{
-            font-size: 20px
+            font-size: 18px
         }
     </style>
+    <div class="row m-0">
+        <div class="d-flex justify-content-start align-content-center">
+            <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
+            <div class="col docname">
+                @foreach($listakunpsikolog as $d)
+                <h3><strong>{{ $d->namapsikolog }}</strong></h3>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
 
-        @foreach($listakunpsikolog as $d)
         <h2>
 		<p class="kolom">Nama:</p>
-        <p>{{ $d->namapsikolog }}</p><br>
+        <p>{{ $d->namapsikolog }}</p>
         <p class="kolom">SIPP:</p>
-        <p>{{ $d->sipp }}</p><br>
+        <p>{{ $d->sipp }}</p>
 			<p class="kolom">Email:</p>
             <p>{{ $d->emailpsikolog }}</p>
         </h2>
 		@endforeach
+        <div class="d-flex" style="padding-top: 40px">
+            <a href="/psikolog/schedule"><div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule
+            </div></a>
     @endsection
 
 
