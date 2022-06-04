@@ -26,6 +26,8 @@ Route::get('/role/psikolog/login','RoleController@doctorLogin');
 //route Role --> Noverita
 Route::get('/psikolog/profile','Role\ProfilController@profilPsikolog');
 Route::get('/patient/profile','Role\ProfilController@profilPatient');
+Route::get('/psikolog/edit/{id}','Role\ProfilController@EditProfilPsikolog');
+Route::post('/psikolog/profile/update','Role\ProfilController@UpdateProfilPsikolog');
 
 //route Konsultasi
 //--> Noverita

@@ -48,6 +48,7 @@
         <div class="d-flex" style="padding-top: 40px">
             <a href="/psikolog/schedule"><div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule
             </div></a>
+            <div style="padding-left: 40px">
+                <a href="/psikolog/edit/{{$d->sipp}}"><div class="btn payment-bttn"> Edit Profile
+                </div></a>
     @endsection
-
-

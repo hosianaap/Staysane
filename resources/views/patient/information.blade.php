@@ -1,5 +1,4 @@
 @extends('layout.main-patient-layout')
-
 @section('mainTitle', 'Information')
 @section('navbar-actived')
     <style>
