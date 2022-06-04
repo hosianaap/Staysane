@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 // route CRUD home
 Route::get('/','HomeController@home');
 Route::get('/home','HomeController@home');
