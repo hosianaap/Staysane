@@ -1,19 +1,28 @@
 @extends('layout.main-psikolog-layout')
 @section('mainTitle', 'Doctor Profile')
 @section('navbar-actived')
-  <nav id="navbar" class="nav-menu navbar">
+<nav id="navbar" class="nav-menu navbar">
     <ul>
-      <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
-      <li><a href="/psikolog/patient" class="btn nav-link " role="button"><i class="bi bi-bag-plus"></i> <span>Patient</span></a></li>
-      <li><a href="/psikolog/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i> <span>Chat</span></a></li>
-      <li><a href="/psikolog/profile" class="btn nav-link active" role="button"><i class="bx bx-user"></i> <span>Profie</span></a></li>
+        <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i>
+                <span>Doctor</span></a></li>
+        <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
+                <span>Chat</span></a></li>
+        <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
+                <span>Profie</span></a></li>
     </ul>
-  </nav><!-- .nav-menu -->
+</nav><!-- .nav-menu -->
 @endsection
+
 
 @section('content')
 	<h3>EDIT MY PROFIL</h3>
+
+	<a href="/psikolog/profile"> Kembali</a>
+
 	<br/>
+	<br/>
+
 
 	<form action="/psikolog/profile/update" method="POST">
 		{{ csrf_field() }}
@@ -36,13 +45,9 @@
             <input type="password" class="form-control"  name="pass" value="{{ $p->passwordpsikolog }}">
           </div>
 		<br>
-        <div class="d-flex" style="padding-top: 40px">
-            <a href="/psikolog/profile" class="btn payment-bttn"> Back
-            </a>
-            <div style="padding-left: 40px">
-                <input type="submit" class="btn payment-bttn" value="Save Data"> </div>
+        <input type="submit" class="btn payment-bttn" value="Save Data">
     </form>
-    @endforeach
+	@endforeach
     @endsection
 
 
