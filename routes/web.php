@@ -24,6 +24,8 @@ Route::get('/psikolog/profile','Role\ProfilController@profilPsikolog');
 Route::get('/patient/profile','Role\ProfilController@profilPatient');
 Route::get('/psikolog/edit/{id}','Role\ProfilController@EditProfilPsikolog');
 Route::post('/psikolog/profile/update','Role\ProfilController@UpdateProfilPsikolog');
+Route::get('/patient/edit/{id}','Role\ProfilController@EditProfilPatient');
+Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient');
 //route CRUD psikolog
 Route::get('/doctor/profile','RoleController@profilPsikolog');
 
