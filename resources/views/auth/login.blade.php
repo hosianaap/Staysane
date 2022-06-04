@@ -3,19 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="d-none d-md-flex col-md-4 col-lg-6">
-                <img src="images/sidepic.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-8 col-lg-6">
-                <div class="login min-vh-100 d-flex align-items-center py-5">
-                    <div class="container">
-                        <!-- Title -->
-                        <div class="row">
-                            <div class="col-lg-7 mx-auto">
-                                <h3 class="login-heading mb-4 text-center">{{ __('Login') }}</h3>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">{{ __('Login') }}</div>
 
