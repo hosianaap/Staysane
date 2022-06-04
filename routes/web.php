@@ -26,14 +26,18 @@ Route::get('/psikolog/edit/{id}','Role\ProfilController@EditProfilPsikolog');
 Route::post('/psikolog/profile/update','Role\ProfilController@UpdateProfilPsikolog');
 Route::get('/patient/edit/{id}','Role\ProfilController@EditProfilPatient');
 Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient');
+
 //route CRUD psikolog
 Route::get('/doctor/profile','RoleController@profilPsikolog');
-
+Route::get('/list/psikolog', 'Konsultasi\KonsultasiController@listPsikolog');
+Route::get('/list/psikolog/cari','Konsultasi\KonsultasiController@cari');
 
 //route CRUD patient
 Route::get('/patient/payment','RoleController@patientPayment');
+Route::get('/list/patient', 'Konsultasi\KonsultasiController@listPatient');
+Route::get('/list/patient/search','Konsultasi\KonsultasiController@search');
 
 Route::get('/home', 'HomeController@index')->name('home');
 //route CRUD list
-Route::get('/list/psikolog', 'RoleController@listPsikolog');
+
 Route::get('/patient/doctor-info','RoleController@infoPsikolog');
