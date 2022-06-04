@@ -8,6 +8,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //--> Hosiana Arga P
 Route::get('/','HomeController@home');
 Route::get('/home','HomeController@home');
+// Route::get('/','HomeController@home');
+// Route::get('/home','app\Http\Controllers\HomeController@home');
+// Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', 'LandingPageController@landingPage');
 Route::get('/role','RoleController@role');
 Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
