@@ -28,13 +28,18 @@ public function EditProfilPsikolog($id)
 
 public function UpdateProfilPsikolog(Request $request)
 {
+    $file = $request->file('file');
+    $tujuan_upload = 'data_file';
+    $namadanlokasi = $tujuan_upload . "/" . $file->getClientOriginalName();
 
 	DB::table('listakunpsikolog')->where('sipp',$request->id)->update([
 		'namapsikolog' => $request->nama,
 		'sipp' => $request-> sipp,
 		'emailpsikolog' => $request->email,
-		'passwordpsikolog' => $request->pass
+		'passwordpsikolog' => $request->pass,
+        'fotopsikolog' => $namadanlokasi
 	]);
+    $file->move($tujuan_upload,$file->getClientOriginalName());
 	return redirect('/psikolog/profile');
 }
 public function EditProfilPatient($id)
@@ -45,15 +50,19 @@ public function EditProfilPatient($id)
 }
 public function UpdateProfilPatient(Request $request)
 {
-
+    $file = $request->file('file');
+    $tujuan_upload = 'data_file';
+    $namadanlokasi = $tujuan_upload . "/" . $file->getClientOriginalName();
 	DB::table('listakunpasien')->where('idpasien',$request->id)->update([
         'unamepasien' => $request->uname,
 		'namapasien' => $request->nama,
-		'tgllahir' => $request-> bod,
 		'emailpasien' => $request->email,
 		'lokasi' => $request->location,
-        'telppasien' => $request->phone
+        'telppasien' => $request->phone,
+        'passwordpasien' => $request->pass,
+        'fotopasien' => $namadanlokasi
 	]);
+    $file->move($tujuan_upload,$file->getClientOriginalName());
 	return redirect('/patient/profile');
 }
 }

@@ -117,9 +117,9 @@ input[type='radio']:checked {
                         <div class="row m-0">
                             <div class="col-12 px-4">
                                 <div class="d-flexs">
-                                    @foreach($konsultasi as $k)
+                                    {{-- @foreach($konsultasi as $k) --}}
                                        <h5>Date and Time</h5><br>
-                                       <p>{{ $k->waktukonsultasi }}</p>
+                                       {{-- <p>{{ $k->waktukonsultasi }}</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -131,16 +131,17 @@ input[type='radio']:checked {
                             </div>
                             </div>
                         </div>
-
+                        {{-- @endforeach --}}
                         <div class="row m-0">
                             <div class="d-flex flex-row-reverse" style="padding-top: 100px">
                                 <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
                                 </div>
                             </div>
+                            {{-- @foreach ($listakunpsikolog as $s)
                             <div style="padding-left: 40px">
                                 <a href="/patient/doctor-info/schedule{{$s->sipp}}"><div class="btn payment-bttn"> Edit Schedule
                                 </div></a>
-                                @endforeach
+                                 @endforeach --}}
                         </div>
                     </div>
                 </div>

@@ -32,9 +32,10 @@
 
     <div class="row m-0">
         <div class="d-flex justify-content-start align-content-center">
-            <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
+            @foreach($listakunpasien as $d)
+            <img alt="docpic" src="{{$d->fotopasien}}" id="docpic">
             <div class="col docname">
-                @foreach($listakunpasien as $d)
+
                 <h3><strong>{{ $d->namapasien }}</strong></h3>
                 <br>
                 <br>
@@ -42,33 +43,32 @@
         </div>
     </div>
     <div class="row m-0 detail-profile">
-        <h4></h4>
         <p class="kolom">Nama</p>
         <b>
-            <p>Alex Nikiforov</p>
+            <p>{{ $d->namapasien}}</p>
         </b>
         <p class="kolom">Birth date</p>
         <b>
-            <p>2001-12-31</p>
+            <p>{{ $d->tgllahir}}</p>
         </b>
         <p class="kolom">Email</p>
         <b>
-            <p>alex@gmail.com</p>
+            <p>{{ $d->emailpasien}}</p>
         </b>
         <p class="kolom">Location</p>
         <b>
-            <p>Surabaya</p>
+            <p>{{ $d->lokasi}}</p>
         </b>
         <p class="kolom">Phone number</p>
         <b>
-            <p>082141057727</p>
+            <p>{{ $d->telppasien}}</p>
         </b>
         <div class="d-flex" style="padding-top: 40px">
             <a href="/patient/schedule"><div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule
             </div></a>
 
         <div style="padding-left: 40px">
-            <a href="/patient/edit/{{$d->idpasien}}"><div class="btn payment-bttn"> Edit Profile
+            <a href="/patient/profile/edit/{{$d->idpasien}}"><div class="btn payment-bttn"> Edit Profile
             </div></a>
     </div></div>
     @endforeach

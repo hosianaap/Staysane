@@ -31,7 +31,7 @@ Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient
 //route Konsultasi
 //--> Noverita
 Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@detailPsikolog');
-Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@jadwalKonsultasi');
+// Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@jadwalKonsultasi');
 Route::get('/patient/doctor-info/schedule{id}','Konsultasi\PenjadwalanController@EditInfoKonsultasi');
 Route::post('/patient/doctor-info/update','Konsultasi\PenjadwalanController@UpdateInfoKonsultasi');
 

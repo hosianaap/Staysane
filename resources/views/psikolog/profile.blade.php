@@ -26,9 +26,9 @@
     </style>
     <div class="row m-0">
         <div class="d-flex justify-content-start align-content-center">
-            <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
+            @foreach($listakunpsikolog as $d)
+            <img src="{{$d->fotopsikolog}}" width="100px">
             <div class="col docname">
-                @foreach($listakunpsikolog as $d)
                 <h3><strong>{{ $d->namapsikolog }}</strong></h3>
                 <br>
                 <br>

@@ -17,12 +17,11 @@ class PenjadwalanController extends Controller
     	$listakunpsikolog = DB::table('listakunpsikolog')->get();
     	return view('patient.information',['listakunpsikolog' => $listakunpsikolog]);
     }
-
-    public function jadwalKonsultasi()
-    {
-    	$konsultasi = DB::table('konsultasi')->get();
-    	return view('patient.information',['konsultasi' => $konsultasi]);
-    }
+    // public function jadwalKonsultasi()
+    // {
+    // 	$konsultasi = DB::table('konsultasi')->get();
+    // 	return view('patient.information',['konsultasi' => $konsultasi]);
+    // }
 
     public function EditInfoKonsultasi($id)
 {
@@ -30,6 +29,7 @@ class PenjadwalanController extends Controller
 	$konsultasi = DB::table('konsultasi')->where('idkonsultasi',$id)->get();
 	return view('patient.edit-information',['konsultasi' => $konsultasi]);
 }
+
 
 public function UpdateInfoKonsultasi(Request $request)
 {

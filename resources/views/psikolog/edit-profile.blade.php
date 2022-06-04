@@ -1,5 +1,5 @@
 @extends('layout.main-psikolog-layout')
-@section('mainTitle', 'Doctor Profile')
+@section('mainTitle', 'Edit My Profile')
 @section('navbar-actived')
   <nav id="navbar" class="nav-menu navbar">
     <ul>
@@ -15,10 +15,14 @@
 	<h3>EDIT MY PROFIL</h3>
 	<br/>
 
-	<form action="/psikolog/profile/update" method="POST">
+	<form action="/psikolog/profile/update" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
         @foreach($listakunpsikolog as $p)
 		<input type="hidden" name="id" value="{{ $p->sipp }}"> <br>
+        <div class="form-group">
+            <label for="nama">Profile Photo:</label>
+            <input type="file" name="file">
+          </div>
         <div class="form-group">
             <label for="nama">Nama:</label>
             <input type="text" class="form-control"  name="nama" value="{{ $p->namapsikolog }}">

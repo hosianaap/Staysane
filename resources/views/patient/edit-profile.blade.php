@@ -1,5 +1,5 @@
-@extends('layout.main-psikolog-layout')
-@section('mainTitle', 'Doctor Profile')
+@extends('layout.main-patient-layout')
+@section('mainTitle', 'Edit My Profile')
 @section('navbar-actived')
 <nav id="navbar" class="nav-menu navbar">
     <ul>
@@ -16,36 +16,45 @@
 
 
 @section('content')
-	<h3>EDIT MY PROFIL</h3>
+	<h3>EDIT MY PROFILE</h3>
 
-	<a href="/psikolog/profile"> Kembali</a>
-
-	<br/>
-	<br/>
-
-
-	<form action="/psikolog/profile/update" method="POST">
+	<form action="/patient/profile/update" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
-        @foreach($listakunpsikolog as $p)
-		<input type="hidden" name="id" value="{{ $p->sipp }}"> <br>
+        @foreach($listakunpasien as $p)
+		<input type="hidden" name="id" value="{{ $p->idpasien }}"> <br>
+        <div class="form-group">
+            <label for="nama">Profile Photo:</label>
+            <input type="file" name="file">
+          </div>
+        <div class="form-group">
+            <label for="pass">Username:</label>
+            <input type="text" class="form-control"  name="uname" value="{{ $p->unamepasien }}">
+          </div>
         <div class="form-group">
             <label for="nama">Nama:</label>
-            <input type="text" class="form-control"  name="nama" value="{{ $p->namapsikolog }}">
-          </div>
-          <div class="form-group">
-            <label for="sipp">SIPP:</label>
-            <input type="text" class="form-control"  name="sipp" value="{{ $p->sipp }}">
+            <input type="text" class="form-control"  name="nama" value="{{ $p->namapasien}}">
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control"  name="email" value="{{ $p->emailpsikolog }}">
+            <input type="email" class="form-control"  name="email" value="{{ $p->emailpasien }}">
+          </div>
+          <div class="form-group">
+            <label for="pass">Location:</label>
+            <input type="text" class="form-control"  name="location" value="{{ $p->lokasi }}" required>
+          </div>
+          <div class="form-group">
+            <label for="pass">Phone Number:</label>
+            <input type="text" class="form-control"  name="phone" value="{{ $p->telppasien }}">
           </div>
           <div class="form-group">
             <label for="pass">Password:</label>
-            <input type="password" class="form-control"  name="pass" value="{{ $p->passwordpsikolog }}">
+            <input type="password" class="form-control"  name="pass" value="{{ $p->passwordpasien }}">
           </div>
-		<br>
-        <input type="submit" class="btn payment-bttn" value="Save Data">
+        <div class="d-flex" style="padding-top: 40px">
+            <a href="/patient/profile" class="btn payment-bttn"> Back
+            </a>
+            <div style="padding-left: 40px">
+                <input type="submit" class="btn payment-bttn" value="Save Data"> </div>
     </form>
 	@endforeach
     @endsection
