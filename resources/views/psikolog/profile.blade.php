@@ -16,10 +16,6 @@
 	<br>
     <br>
     <style>
-        .kolom {
-            font-size: 28px;
-            color: rgba(35, 31, 32, 0.5);
-        }
         p{
             font-size: 18px
         }

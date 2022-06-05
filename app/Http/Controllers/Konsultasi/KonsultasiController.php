@@ -13,6 +13,7 @@ class KonsultasiController extends Controller
 
     	return view('patient.list-psikolog');
     }
+
     public function listPasien(){
 
     	return view('psikolog.list-patient');

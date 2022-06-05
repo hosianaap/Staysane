@@ -45,17 +45,6 @@
             </div>
             @section('navbar-actived')
             @show
-
-            <div class="logout text-center mt-5">
-                <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                    <h5 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">{{ __('Logout') }}</h5>
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </div>
         </div>
     </header><!-- End Header -->
 
@@ -66,6 +55,22 @@
             @show
         </section>
     </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="logout text-center mt-5">
+                <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                    <h5 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">{{ __('Logout') }}
+                    </h5>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
 </body>
 
 </html>
