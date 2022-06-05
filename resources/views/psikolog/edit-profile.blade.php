@@ -1,6 +1,5 @@
-
 @extends('layout.main-psikolog-layout')
-@section('mainTitle', 'Doctor Profile')
+@section('mainTitle', 'Edit My Profile')
 @section('navbar-actived')
   <nav id="navbar" class="nav-menu navbar">
     <ul>
@@ -14,17 +13,16 @@
 
 @section('content')
 	<h3>EDIT MY PROFIL</h3>
-
-	<a href="/psikolog/profile"> Kembali</a>
-
-	<br/>
 	<br/>
 
-
-	<form action="/psikolog/profile/update" method="POST">
+	<form action="/psikolog/profile/update" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
         @foreach($listakunpsikolog as $p)
 		<input type="hidden" name="id" value="{{ $p->sipp }}"> <br>
+        <div class="form-group">
+            <label for="nama">Profile Photo:</label>
+            <input type="file" name="file">
+          </div>
         <div class="form-group">
             <label for="nama">Nama:</label>
             <input type="text" class="form-control"  name="nama" value="{{ $p->namapsikolog }}">
@@ -42,9 +40,13 @@
             <input type="password" class="form-control"  name="pass" value="{{ $p->passwordpsikolog }}">
           </div>
 		<br>
-        <input type="submit" class="btn payment-bttn" value="Save Data">
+        <div class="d-flex" style="padding-top: 40px">
+            <a href="/psikolog/profile" class="btn payment-bttn"> Back
+            </a>
+            <div style="padding-left: 40px">
+                <input type="submit" class="btn payment-bttn" value="Save Data"> </div>
     </form>
-	@endforeach
+    @endforeach
     @endsection
 
 
