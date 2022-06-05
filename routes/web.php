@@ -20,6 +20,9 @@ Route::get('/role/patient/login','RoleController@patientLogin');
 Route::get('/role/patient/register','RoleController@patientRegister');
 Route::get('/role/psikolog/login','RoleController@doctorLogin');
 Route::get('/role/doctor/login','RoleController@doctorLogin');
+Route::prefix('patient')->middleware(['auth', 'isPatient'])->group(function (){
+    Route::get('/patient/doctor', 'Konsultasi\KonsultasiController@listPsikolog');
+});
 
 //route Role --> Noverita Rizki
 Route::get('/psikolog/profile','Role\ProfilController@profilPsikolog');
