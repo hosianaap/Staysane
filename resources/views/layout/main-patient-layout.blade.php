@@ -15,7 +15,9 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="/vendor/aos/aos.css" rel="stylesheet">
@@ -26,34 +28,44 @@
     <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="<?php echo asset('css/main.css')?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo asset('css/main.css'); ?>" type="text/css">
 
 </head>
 
 <body>
     <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+    <header id="header">
+        <div class="d-flex flex-column">
 
-      <div class="profile">
-        <a href="/" >
-            <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
-            <h1 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">StaySane</h1>
-        </a>
-      </div>
-      @section ('navbar-actived')
-      @show
+            <div class="profile">
+                <a href="/">
+                    <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
+                    <h1 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">StaySane</h1>
+                </a>
+            </div>
+            @section('navbar-actived')
+            @show
 
-    </div>
-  </header><!-- End Header -->
+            <div class="logout text-center mt-5">
+                <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    <h5 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">{{ __('Logout') }}</h5>
+                </a>
 
-  <main id="main">
-    <section>
-        <!-- ======= Content Section ======= -->
-        @section('content')
-        @show
-    </section>
-  </main>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+        <section>
+            <!-- ======= Content Section ======= -->
+            @section('content')
+            @show
+        </section>
+    </main>
 </body>
 
 </html>
