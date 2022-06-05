@@ -3,6 +3,8 @@
 //--> Aqmarina Nindya
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/patient/konsultasi/penilaian','Konsultasi\PenilaianController@penilaianPasien');
+Route::get('/doctor/konsultasi/catatan','Konsultasi\CatatanController@catatanPsikolog');
 
 // route CRUD home
 //--> Hosiana Arga P
@@ -27,7 +29,7 @@ Route::post('/psikolog/profile/update','Role\ProfilController@UpdateProfilPsikol
 Route::get('/patient/profile/edit/{id}','Role\ProfilController@EditProfilPatient');
 Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient');
 Route::get('/doctor/profile','RoleController@profilPsikolog');
-Route::get('/doctor/konsultasi/catatan','Konsultasi\CatatanController@catatanPsikolog');
+
 
 //route Konsultasi
 Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@detailPsikolog');
@@ -43,7 +45,7 @@ Route::get('/psikolog/chats','Konsultasi\KonsultasiController@chatPsikolog');
 Route::get('/psikolog/schedule','Konsultasi\PenjadwalanController@psikologSchedule');
 //route CRUD patient
 Route::get('/patient/payment','RoleController@patientPayment');
-Route::get('/patient/konsultasi/penilaian','Konsultasi\PenilaianController@penilaianPasien');
+
 
 //--> Desi
 Route::get('/patient/doctor', 'Konsultasi\KonsultasiController@listPsikolog');
