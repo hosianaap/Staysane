@@ -28,12 +28,14 @@ Route::get('/patient/edit/{id}','Role\ProfilController@EditProfilPatient');
 Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient');
 //route CRUD psikolog
 Route::get('/doctor/profile','RoleController@profilPsikolog');
-
+Route::get('/doctor/konsultasi/catatan','Konsultasi\CatatanController@catatanPsikolog');
 
 //route CRUD patient
 Route::get('/patient/payment','RoleController@patientPayment');
+Route::get('/patient/konsultasi/penilaian','Konsultasi\PenilaianController@penilaianPasien');
 
 Route::get('/home', 'HomeController@index')->name('home');
 //route CRUD list
 Route::get('/list/psikolog', 'RoleController@listPsikolog');
 Route::get('/patient/doctor-info','RoleController@infoPsikolog');
+
