@@ -12,7 +12,10 @@ class KonsultasiController extends Controller
     public function listPsikolog()
     {
     	// mengambil data dari table psikolog
-    	$listakunpsikolog = DB::table('listakunpsikolog')->get();
+    	$listakunpsikolog = DB::table('listakunpsikolog')
+        ->leftjoin('penilaian', 'listakunpsikolog.sipp', '=', 'penilaian.sipp')
+        ->get();
+
     	// mengirim data psikolog ke view index
     	return view('psikolog.list-psikolog',['listakunpsikolog' => $listakunpsikolog]);
     }
