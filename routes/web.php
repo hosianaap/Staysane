@@ -64,6 +64,5 @@ Route::get('/psikolog/patient', 'Konsultasi\KonsultasiController@listPasien');
 Route::get('/home', 'HomeController@index')->name('home');
 //route CRUD list
 
-Route::get('/patient/doctor-info','RoleController@infoPsikolog');
 
 

@@ -57,7 +57,7 @@
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
                                                     <div class="candidate-list-title">
-                                                        <h5 class="mb-0"><a href="#">{{ $a->namapsikolog }}</a>
+                                                        <h5 class="mb-0"><a href="/patient/doctor-info">{{ $a->namapsikolog }}</a>
                                                         </h5>
                                                     </div>
                                                 </div>
