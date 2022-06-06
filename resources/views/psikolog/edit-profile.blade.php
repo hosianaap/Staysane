@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-	<h3>EDIT MY PROFIL</h3>
+	<h3>EDIT MY PROFILE</h3>
 	<br/>
 
 	<form action="/psikolog/profile/update" method="POST" enctype="multipart/form-data">
