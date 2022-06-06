@@ -34,6 +34,10 @@ Route::get('/patient/profile/edit/{id}','Role\ProfilController@EditProfilPatient
 Route::post('/patient/profile/update','Role\ProfilController@UpdateProfilPatient');
 Route::get('/doctor/profile','RoleController@profilPsikolog');
 
+//route CRUD psikolog
+Route::get('/doctor/profile','RoleController@profilPsikolog');
+Route::get('/list/psikolog', 'Konsultasi\KonsultasiController@listPsikolog');
+Route::get('/list/psikolog/cari','Konsultasi\KonsultasiController@cari');
 
 //route Konsultasi
 Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@detailPsikolog');
@@ -47,11 +51,19 @@ Route::get('/patient/schedule','Konsultasi\PenjadwalanController@patientSchedule
 Route::get('/patient/chats','Konsultasi\KonsultasiController@chatPatient');
 Route::get('/psikolog/chats','Konsultasi\KonsultasiController@chatPsikolog');
 Route::get('/psikolog/schedule','Konsultasi\PenjadwalanController@psikologSchedule');
+//route CRUD patient
+Route::get('/patient/payment','RoleController@patientPayment');
+Route::get('/list/patient', 'Konsultasi\KonsultasiController@listPatient');
+Route::get('/list/patient/search','Konsultasi\KonsultasiController@search');
 
 
 
 //--> Desi
 Route::get('/patient/doctor', 'Konsultasi\KonsultasiController@listPsikolog');
 Route::get('/psikolog/patient', 'Konsultasi\KonsultasiController@listPasien');
+Route::get('/home', 'HomeController@index')->name('home');
+//route CRUD list
+
+Route::get('/patient/doctor-info','RoleController@infoPsikolog');
 
 
