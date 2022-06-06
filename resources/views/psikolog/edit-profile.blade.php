@@ -3,7 +3,6 @@
 @section('navbar-actived')
   <nav id="navbar" class="nav-menu navbar">
     <ul>
-      <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
       <li><a href="/psikolog/patient" class="btn nav-link " role="button"><i class="bi bi-bag-plus"></i> <span>Patient</span></a></li>
       <li><a href="/psikolog/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i> <span>Chat</span></a></li>
       <li><a href="/psikolog/profile" class="btn nav-link active" role="button"><i class="bx bx-user"></i> <span>Profie</span></a></li>
@@ -12,7 +11,7 @@
 @endsection
 
 @section('content')
-	<h3>EDIT MY PROFIL</h3>
+	<h3>EDIT MY PROFILE</h3>
 	<br/>
 
 	<form action="/psikolog/profile/update" method="POST" enctype="multipart/form-data">
@@ -34,6 +33,18 @@
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" class="form-control"  name="email" value="{{ $p->emailpsikolog }}">
+          </div>
+          <div class="form-group">
+            <label for="nama">Experience:</label>
+            <input type="text" class="form-control"  name="exp" value="{{ $p->experience }}">
+          </div>
+          <div class="form-group">
+            <label for="nama">Alumnus:</label>
+            <input type="text" class="form-control"  name="alumnus" value="{{ $p->alumnus }}">
+          </div>
+          <div class="form-group">
+            <label for="nama">Workplace:</label>
+            <input type="text" class="form-control"  name="workplace" value="{{ $p->workplace }}">
           </div>
           <div class="form-group">
             <label for="pass">Password:</label>

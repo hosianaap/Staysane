@@ -49,7 +49,6 @@ input[type='radio']:checked {
     </style>
     <nav id="navbar" class="nav-menu navbar">
         <ul>
-            <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
             <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i>
                     <span>Doctor</span></a></li>
             <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
@@ -66,12 +65,12 @@ input[type='radio']:checked {
                 <div class="row" id="patient-pay">
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
-                            <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
+                            @foreach ($listakunpsikolog as $s)
+                            <img alt="docpic" src="{{$s->fotopsikolog}}" id="docpic">
                         </div>
                     </div>
 
                     <div class="row m-0 detail-order">
-                        @foreach ($listakunpsikolog as $s)
                                 <h3><strong>{{ $s->namapsikolog }}</strong></h3>
                                 <br>
                                 <br>
@@ -87,10 +86,6 @@ input[type='radio']:checked {
                         <h5>Experience</h5>
                         <b>
                             <p class="border">{{ $s->experience }} years</p>
-                        </b><br><br>
-                        <h5>SIPP</h5>
-                        <b>
-                            <p class="border1">{{ $s->sipp }}</p>
                         </b><br><br>
                     </div>
                     @endforeach

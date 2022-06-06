@@ -3,7 +3,6 @@
 @section('navbar-actived')
   <nav id="navbar" class="nav-menu navbar">
     <ul>
-      <li><a href="/" class="btn nav-link" role="button"><i class="bx bx-home"></i> <span>Home</span></a></li>
       <li><a href="/psikolog/patient" class="btn nav-link " role="button"><i class="bi bi-bag-plus"></i> <span>Patient</span></a></li>
       <li><a href="/psikolog/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i> <span>Chat</span></a></li>
       <li><a href="/psikolog/profile" class="btn nav-link active" role="button"><i class="bx bx-user"></i> <span>Profie</span></a></li>
@@ -16,10 +15,6 @@
 	<br>
     <br>
     <style>
-        .kolom {
-            font-size: 28px;
-            color: rgba(35, 31, 32, 0.5);
-        }
         p{
             font-size: 18px
         }

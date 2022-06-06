@@ -14,7 +14,9 @@ class PenjadwalanController extends Controller
     }
     public function detailPsikolog()
     {
-    	$listakunpsikolog = DB::table('listakunpsikolog')->get();
+    	$listakunpsikolog = DB::table('listakunpsikolog')
+        ->leftjoin('konsultasi', 'listakunpsikolog.sipp', '=', 'konsultasi.sipp')
+->get();
     	return view('patient.information',['listakunpsikolog' => $listakunpsikolog]);
     }
     // public function jadwalKonsultasi()
