@@ -66,12 +66,12 @@ input[type='radio']:checked {
                 <div class="row" id="patient-pay">
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
-                            <img alt="docpic" src="/images/doctorprofile3.png" id="docpic">
+                            @foreach ($listakunpsikolog as $s)
+                            <img alt="docpic" src="{{$s->fotopsikolog}}" id="docpic">
                         </div>
                     </div>
 
                     <div class="row m-0 detail-order">
-                        @foreach ($listakunpsikolog as $s)
                                 <h3><strong>{{ $s->namapsikolog }}</strong></h3>
                                 <br>
                                 <br>
