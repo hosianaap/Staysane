@@ -35,6 +35,18 @@
             <input type="email" class="form-control"  name="email" value="{{ $p->emailpsikolog }}">
           </div>
           <div class="form-group">
+            <label for="nama">Experience:</label>
+            <input type="text" class="form-control"  name="exp" value="{{ $p->experience }}">
+          </div>
+          <div class="form-group">
+            <label for="nama">Alumnus:</label>
+            <input type="text" class="form-control"  name="alumnus" value="{{ $p->alumnus }}">
+          </div>
+          <div class="form-group">
+            <label for="nama">Workplace:</label>
+            <input type="text" class="form-control"  name="workplace" value="{{ $p->workplace }}">
+          </div>
+          <div class="form-group">
             <label for="pass">Password:</label>
             <input type="password" class="form-control"  name="pass" value="{{ $p->passwordpsikolog }}">
           </div>

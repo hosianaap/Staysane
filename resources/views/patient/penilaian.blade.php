@@ -159,10 +159,29 @@ text-transform: uppercase;
             </div>
         </div>
         <div class="container mt-3 mb-4">
-
-            <form>
+            <form action="/patient/profile/update" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                @foreach($penilaian as $p)
+                <input type="hidden" name="id" value="{{ $p->idpasien }}"> <br>
+                <div class="form-group">
+                    <label for="pass">Username:</label>
+                    <input type="text" class="form-control"  name="uname" value="{{ $p->unamepasien }}">
+                  </div>
+                <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input type="text" class="form-control"  name="nama" value="{{ $p->namapasien}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control"  name="email" value="{{ $p->emailpasien }}">
+                  </div>
+            <form action="/patient/chats/penilaian" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                @foreach($penilaian as $s)
+                <input type="hidden" name="idpasien" value="{{ $s->idpasien }}"> <br>
+                <input type="hidden" name="idpsikolog" value="{{ $s->sipp }}"> <br>
                 <div class="form-group row">
-                    <label for="comment">Rating:</label>
+                    <label for="rating">Rating:</label>
                 <fieldset class="rating">
                     <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Outstanding - 5 stars"></label>
 

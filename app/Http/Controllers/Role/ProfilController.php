@@ -37,7 +37,10 @@ public function UpdateProfilPsikolog(Request $request)
 		'sipp' => $request-> sipp,
 		'emailpsikolog' => $request->email,
 		'passwordpsikolog' => $request->pass,
-        'fotopsikolog' => $namadanlokasi
+        'fotopsikolog' => $namadanlokasi,
+        'experience' => $request->exp,
+        'alumnus' => $request->alumnus,
+        'workplace' => $request->workplace
 	]);
     $file->move($tujuan_upload,$file->getClientOriginalName());
 	return redirect('/psikolog/profile');
