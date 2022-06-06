@@ -32,6 +32,19 @@
             order: 0;
             flex-grow: 0;
         }
+        input[type='radio'] {
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  outline: 2px solid #17A2B8;
+  border: 3px solid #17A2B8;
+  width: 16px;
+  height: 16px;
+}
+
+input[type='radio']:checked {
+  background: #333;
+}
 
     </style>
     <nav id="navbar" class="nav-menu navbar">
@@ -66,19 +79,19 @@
                         <h5>Alumnus</h5>
                         <b>
                             <p>{{ $s->alumnus }}</p>
-                        </b><br>
+                        </b><br><br>
                         <h5>Work Place</h5>
                         <b>
                             <p>{{ $s->workplace }}</p>
-                        </b><br>
+                        </b><br><br>
                         <h5>Experience</h5>
                         <b>
                             <p class="border">{{ $s->experience }} years</p>
-                        </b><br>
+                        </b><br><br>
                         <h5>SIPP</h5>
                         <b>
                             <p class="border1">{{ $s->sipp }}</p>
-                        </b><br>
+                        </b><br><br>
                     </div>
                     @endforeach
                     <div class="row m-0">
@@ -99,31 +112,41 @@
             <div class="col-lg-5 p-0 ps-lg-4">
                 <div class="row m-0">
                     <div class="col-12 px-0">
+                        </div>
+                    </div>
                         <div class="row m-0">
-                            <div class="col-12 px-4 my-4">
-                            </div>
                             <div class="col-12 px-4">
                                 <div class="d-flexs">
-                                    <span class="">
-                                       <h5>Time</h5>
-                                    </span>
+                                    {{-- @foreach($konsultasi as $k) --}}
+                                       <h5>Date and Time</h5><br>
+                                       {{-- <p>{{ $k->waktukonsultasi }}</p> --}}
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row m-0">
-                            <div class="d-flexs" style="padding-right: 20px">
-                                <h5>Consultation Type</h5>
+                            <div class="col-12 px-4">
+                            <div class="d-flexs">
+                                    <h5>Consultation Type</h5><br>
                             </div>
+                            </div>
+                        </div>
+                        {{-- @endforeach --}}
                         <div class="row m-0">
-                            <div class="d-flex flex-row-reverse" style="padding-right: 20px">
+                            <div class="d-flex flex-row-reverse" style="padding-top: 100px">
                                 <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
                                 </div>
                             </div>
+                            {{-- @foreach ($listakunpsikolog as $s)
+                            <div style="padding-left: 40px">
+                                <a href="/patient/doctor-info/schedule{{$s->sipp}}"><div class="btn payment-bttn"> Edit Schedule
+                                </div></a>
+                                 @endforeach --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection
