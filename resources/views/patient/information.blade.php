@@ -88,10 +88,6 @@ input[type='radio']:checked {
                         <b>
                             <p class="border">{{ $s->experience }} years</p>
                         </b><br><br>
-                        <h5>SIPP</h5>
-                        <b>
-                            <p class="border1">{{ $s->sipp }}</p>
-                        </b><br><br>
                     </div>
                     @endforeach
                     <div class="row m-0">
