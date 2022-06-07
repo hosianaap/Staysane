@@ -52,7 +52,7 @@
                                         <td class="title">
                                             <div class="thumb">
                                                 <img class="img-fluid"
-                                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                                                    src="{{ $a->fotopsikolog }}" alt="">
                                             </div>
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
