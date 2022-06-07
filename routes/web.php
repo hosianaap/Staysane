@@ -3,8 +3,10 @@
 //--> Aqmarina Nindya
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/patient/konsultasi/penilaian','Konsultasi\PenilaianController@penilaianPasien');
-Route::get('/doctor/konsultasi/catatan','Konsultasi\CatatanController@catatanPsikolog');
+Route::get('/patient/chats/penilaian','Konsultasi\PenilaianController@penilaianPasien');
+Route::get('/psikolog/chats/catatan','Konsultasi\CatatanController@catatanPsikolog');
+Route::post('/submitpenilaian','Konsultasi\PenilaianController@storePenilaian');
+Route::post('/submitcatatan','Konsultasi\CatatanController@storeCatatan');
 
 // route CRUD home
 //--> Hosiana Arga P
