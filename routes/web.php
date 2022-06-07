@@ -29,7 +29,6 @@ Route::prefix('patient')->middleware(['auth', 'isPatient'])->group(function (){
 //route Role --> Noverita Rizki
 Route::get('/psikolog/profile','Role\ProfilController@profilPsikolog');
 Route::get('/patient/profile','Role\ProfilController@profilPatient');
-Route::get('/myprofile','Role\ProfilController@profilPatient');
 Route::get('/psikolog/profile/edit/{id}','Role\ProfilController@EditProfilPsikolog');
 Route::post('/psikolog/profile/update','Role\ProfilController@UpdateProfilPsikolog');
 Route::get('/patient/profile/edit/{id}','Role\ProfilController@EditProfilPatient');
@@ -49,20 +48,20 @@ Route::post('/patient/doctor-info/update','Konsultasi\PenjadwalanController@Upda
 
 //--> Nazriyah Deny Tsaniyah
 Route::get('/patient/payment','Konsultasi\PembayaranController@infoPayment');
+Route::post('/patient/payment/save','Konsultasi\PembayaranController@patientPayment');
 Route::get('/patient/schedule','Konsultasi\PenjadwalanController@patientSchedule');
 Route::get('/patient/chats','Konsultasi\KonsultasiController@chatPatient');
 Route::get('/psikolog/chats','Konsultasi\KonsultasiController@chatPsikolog');
 Route::get('/psikolog/schedule','Konsultasi\PenjadwalanController@psikologSchedule');
-//route CRUD patient
-Route::get('/patient/payment','RoleController@patientPayment');
-Route::get('/list/patient', 'Konsultasi\KonsultasiController@listPatient');
-Route::get('/list/patient/search','Konsultasi\KonsultasiController@search');
+
 
 
 
 //--> Desi
 Route::get('/patient/doctor', 'Konsultasi\KonsultasiController@listPsikolog');
-Route::get('/psikolog/patient', 'Konsultasi\KonsultasiController@listPasien');
+Route::get('/list/patient', 'Konsultasi\KonsultasiController@listPatient');
+Route::get('/list/patient/search','Konsultasi\KonsultasiController@search');
+Route::get('/psikolog/patient', 'Konsultasi\KonsultasiController@listPatient');
 Route::get('/home', 'HomeController@index')->name('home');
 //route CRUD list
 
