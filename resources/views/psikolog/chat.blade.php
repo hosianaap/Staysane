@@ -79,10 +79,10 @@
             </div>
             <div class="card-footer">
                 <div class="input-group">
-                    <div class="input-group-append">
+                    {{-- <div class="input-group-append">
                         <span class="input-group-text attach_btn"><i class="bi bi-paperclip"></i></span>
                         <span class="input-group-text attach_btn"><i class="bi bi-emoji-smile"></i></i></span>
-                    </div>
+                    </div> --}}
                     <textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
                     <div class="input-group-append">
                         <span class="input-group-text send_btn"><i class="bi bi-send"></i></span>

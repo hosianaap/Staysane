@@ -38,10 +38,8 @@
         <div class="d-flex flex-column">
 
             <div class="profile">
-                <a href="/">
-                    <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
-                    <h1 class="text-light" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">StaySane</h1>
-                </a>
+                <img src="/images/logo.png" alt="" class="img-fluid rounded-circle">
+                <h3 class="text-light text-center" style="text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);">StaySane</h3>
             </div>
             @section('navbar-actived')
             @show
