@@ -63,10 +63,10 @@
                                             </div>
                                         </td>
                                         <td class="candidate-list-favourite-time text-center">
-                                            <span class="candidate-list-time order-1">{{ $b->media }}</span>
+                                            <span class="candidate-list-time order-1">{{ $b->mediakonsultasi }}</span>
                                         </td>
                                         <td class="candidate-list-favourite-time text-center">
-                                            <span class="candidate-list-time order-1">{{ $b->jadwal }}</span>
+                                            <span class="candidate-list-time order-1">{{ $b->waktukonsultasi }}</span>
                                         </td>
                                     </tr>
                                 @endforeach
