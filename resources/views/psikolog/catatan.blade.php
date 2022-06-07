@@ -12,7 +12,10 @@
                     <span>Profie</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
+
 @endsection
+<link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
+    type='text/css' media='all' />
 <style>
     .container p-3 my-3 {
         position: absolute;
@@ -29,7 +32,7 @@
         align-items: center;
     }
 
-    .form-group {
+    .form-group row {
         position: absolute;
         left: 49.58%;
         right: 16.92%;
@@ -53,6 +56,7 @@
         line-height: 27px;
         text-align: center;
         letter-spacing: -0.165px;
+        /* white-space: nowrap; */
     }
 
     .catatan-bttn {
@@ -72,6 +76,10 @@
         border: #536D6C;
     }
 
+    .profile {
+        align-content: center;
+    }
+
     .w3-container {
         height: 232px;
         width: 202px;
@@ -80,40 +88,142 @@
         align-content: center;
     }
 
+    .img-container {
+        align-content: center;
+    }
+
     #piccatatan {
         align: center;
     }
 
+    fieldset,
+    label {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+
+    /****** Style Star Rating Widget *****/
+
+    .rating {
+        border: none;
+        margin-right: 49px;
+    }
+
+    .myratings {
+
+        font-size: 85px;
+        color: green;
+    }
+
+    .rating>[id^="star"] {
+        display: none;
+    }
+
+    .rating>label:before {
+        margin: 5px;
+        font-size: 2.25em;
+        font-weight display: inline-block;
+        content: "\f005";
+        font-family: "Font Awesome 5 Free Solid", "Font Awesome 5 Free" !important;
+        font-weight: 400;
+    }
+
+
+    .rating>label {
+        color: rgb(128, 116, 116);
+        float: right;
+    }
+
+    /***** CSS Magic to Highlight Stars on Hover *****/
+
+    .rating>[id^="star"]:checked~label,
+    /* show gold star when clicked */
+    .rating:not(:checked)>label:hover,
+    /* hover current star */
+    .rating:not(:checked)>label:hover~label {
+        color: #ffd900ee;
+    }
+
+    /* hover previous stars in list */
+    .rating>[id^="star"]:checked+label:hover,
+    /* hover current star when changing rating */
+    .rating>[id^="star"]:checked~label:hover,
+    .rating>label:hover~[id^="star"]:checked~label,
+    /* lighten current selection */
+    .rating>[id^="star"]:checked~label:hover~label {
+        color: #FFED85;
+    }
+
+    .reset-option {
+        display: none;
+    }
+
+    .reset-button {
+        margin: 6px 12px;
+        background-color: rgb(255, 255, 255);
+        text-transform: uppercase;
+    }
 </style>
 @section('content')
 
 
     <div class="catatan">
         <div class="container">
+
             <div class="row profile">
                 <center>
                     <div class="col-md-3">
-                        <div class="pic">
-                            <img alt="docpic" src="/images/doctorprofile3.png">
+                        <div class="img-container">
+                            <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
                         </div>
                         <br>
-                        <div class="col patientname">
-                            <p>Alex Nikiforov</p>
+
+                        <div class="col docname">
+                            <p style="vertical-align:middle">Alex Nikiforov</p>
                         </div>
                 </center>
+
             </div>
+
         </div>
         <div class="container mt-3 mb-4">
-            <form>
-                <div class="form-group">
-                    <label for="comment">Catatan:</label>
-                    <textarea class="form-control" rows="5" id="comment">
-                   </textarea>
-                    <br>
-                    <input type="submit" class="btn catatan-bttn" value="OK">
+            <form action="/submitcatatan" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                {{-- value="{{ $s->sipp }} --}}
+                <div class="form-group row">
+                    <label for="nama" class="col-sm-3 control-label">Nama Pasien:</label>
+                    <div class='col-sm-8 input-group date' id='id'>
+                        <select class="form-control" name="id">
+                            @foreach ($users as $u)
+                                    <option value="{{ $u->id }}"> {{ $u->name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="comment">Catatan:</label>
+                    <div class='col-sm-14' id='reviewtext'>
+                    <textarea class="form-control" for="catatantext" name="catatantext" rows="5" id="comment" placeholder="Any note for the patient?"></textarea>
+                    <br>
+                    <br>
+                    <input type="submit" class="btn catatan-bttn" value="Submit">
+                    {{-- <input type="submit" class="btn catatan-bttn" value="OK"><a href="/patient/doctor" style="color: white"> Submit </a> --}}
+                </div>
+            </div>
+                {{-- @endforeach --}}
             </form>
+
+
 
 
         </div>
