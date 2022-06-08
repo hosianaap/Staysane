@@ -2,20 +2,42 @@
 
 @section('mainTitle', 'Penilaian')
 @section('navbar-actived')
-    <nav id="navbar" class="nav-menu navbar">
-        <ul>
-            <li><a href="/psikolog/patient" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
-                    <span>Patient</span></a></li>
-            <li><a href="/psikolog/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
-                    <span>Chat</span></a></li>
-            <li><a href="/psikolog/profile" class="btn nav-link " role="button"><i class="bx bx-user"></i>
-                    <span>Profie</span></a></li>
-        </ul>
-    </nav><!-- .nav-menu -->
+<nav id="navbar" class="nav-menu navbar">
+    <ul>
+        <li><a href="/patient/doctor" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
+                <span>Psikolog</span></a></li>
+        <li><a href="/patient/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
+                <span>Chat</span></a></li>
+        <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
+                <span>Profie</span></a></li>
+    </ul>
+</nav><!-- .nav-menu -->
 
 @endsection
 <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
     type='text/css' media='all' />
+
+    <script type="text/javascript">
+    function validate(){
+        var wordCount = [document.forms[0].reviewtext.value].join(' ').split(' ').length;
+        if (wordCount < 5 ){
+            alert("Review minimal 5 kata!");
+         return (false);
+        }
+        if (wordCount > 25 ){
+            alert("Review maksimal 25 kata!");
+         return (false);
+        }
+        let x = document.forms[0].["rating"].value;
+        if (x == "") {
+            alert("Rating must be filled out");
+            return false;
+        }
+
+    }
+
+        </script>
+
 <style>
     .container p-3 my-3 {
         position: absolute;
@@ -196,13 +218,13 @@
 
         </div>
         <div class="container mt-3 mb-4">
-            <form action="/submitpenilaian" method="POST" enctype="multipart/form-data">
+            <form action="/submitpenilaian" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{-- value="{{ $s->sipp }} --}}
                 <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Psikolog:</label>
                     <div class='col-sm-8 input-group date' id='sipp'>
-                        <select class="form-control" name="sipp">
+                        <select class="form-control" name="sipp" required>
                             @foreach ($listakunpsikolog as $p)
                                     <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
                                 @endforeach
@@ -228,19 +250,19 @@
 </form> --}}
 <div class='col-sm-8' id='rating'>
                     <fieldset class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"
+                        <input type="radio" id="star5" name="rating" value="5" required /><label class="full" for="star5"
                             title="Outstanding - 5 stars" if></label>
 
-                        <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"
+                        <input type="radio" id="star4" name="rating" value="4" required /><label class="full" for="star4"
                             title="Very Satisfied - 4 stars"></label>
 
-                        <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"
+                        <input type="radio" id="star3" name="rating" value="3" required /><label class="full" for="star3"
                             title="Satisfied - 3 stars"></label>
 
-                        <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"
+                        <input type="radio" id="star2" name="rating" value="2" required /><label class="full" for="star2"
                             title="Unsatisfied - 2 stars"></label>
 
-                        <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
+                        <input type="radio" id="star1" name="rating" value="1" required/><label class="full" for="star1"
                             title="Poor - 1 star"></label>
 
                         <input type="radio" class="reset-option" name="rating" value="reset" />
@@ -251,13 +273,14 @@
                 <div class="form-group row">
                     <label for="comment">Review:</label>
                     <div class='col-sm-14' id='reviewtext'>
-                    <textarea class="form-control" for="reviewtext" name="reviewtext" rows="5" id="comment" placeholder="How was your session?"></textarea>
+                    <textarea class="form-control" for="reviewtext" name="reviewtext" rows="5" id="comment" placeholder="How was your session?" required></textarea>
                     <br>
                     <input type="submit" class="btn catatan-bttn" value="Submit">
                     {{-- <input type="submit" class="btn catatan-bttn" value="OK"><a href="/patient/doctor" style="color: white"> Submit </a> --}}
 
             </div>
             </div>
+
                 {{-- @endforeach --}}
             </form>
             {{-- <script>
