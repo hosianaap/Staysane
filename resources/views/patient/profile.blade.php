@@ -41,40 +41,45 @@
             <img src="{{asset('data_file/'. $d->fotopasien)}}">
             <div class="col docname">
 
-                <h3><strong>{{ $d->namapasien }}</strong></h3>
-                <br>
-                <br>
-            </div>
+                    <h3><strong>{{ $d->namapasien }}</strong></h3>
+                    <br>
+                    <br>
+                </div>
         </div>
     </div>
     <div class="row m-0 detail-profile">
         <p class="kolom">Nama</p>
         <b>
-            <p>{{ $d->namapasien}}</p>
+            <p>{{ $d->namapasien }}</p>
         </b>
         <p class="kolom">Birth date</p>
         <b>
-            <p>{{ $d->tgllahir}}</p>
+            <p>{{ $d->tgllahir }}</p>
         </b>
         <p class="kolom">Email</p>
         <b>
-            <p>{{ $d->emailpasien}}</p>
+            <p>{{ $d->emailpasien }}</p>
         </b>
         <p class="kolom">Location</p>
         <b>
-            <p>{{ $d->lokasi}}</p>
+            <p>{{ $d->lokasi }}</p>
         </b>
         <p class="kolom">Phone number</p>
         <b>
-            <p>{{ $d->telppasien}}</p>
+            <p>{{ $d->telppasien }}</p>
         </b>
         <div class="d-flex" style="padding-top: 40px">
-            <a href="/patient/schedule"><div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule
-            </div></a>
+            <a href="/patient/schedule">
+                <div class="btn payment-bttn"><span><i class="bi bi-calendar"></i></span> Your schedule
+                </div>
+            </a>
 
-        <div style="padding-left: 40px">
-            <a href="/patient/profile/edit/{{$d->idpasien}}"><div class="btn payment-bttn"> Edit Profile
-            </div></a>
-    </div></div>
-    @endforeach
-@endsection
+            <div style="padding-left: 40px">
+                <a href="/patient/profile/edit/{{ $d->idpasien }}">
+                    <div class="btn payment-bttn"> Edit Profile
+                    </div>
+                </a>
+            </div>
+        </div>
+        @endforeach
+    @endsection

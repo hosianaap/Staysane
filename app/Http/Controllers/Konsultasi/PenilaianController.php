@@ -13,7 +13,7 @@ class PenilaianController extends Controller
     public function penilaianPasien(){
         $listakunpsikolog = DB::table('listakunpsikolog')->get();
         return view('patient.penilaian',['listakunpsikolog' => $listakunpsikolog]);
-       
+
     }
 
     public function storePenilaian(Request $request)

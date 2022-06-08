@@ -51,8 +51,7 @@
                                     <tr class="candidates-list">
                                         <td class="title">
                                             <div class="thumb">
-                                                <img class="img-fluid"
-                                                    src="{{ $a->fotopsikolog }}" alt="">
+                                                <img src="{{asset('data_file/'. $a->fotopsikolog)}}">
                                             </div>
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
