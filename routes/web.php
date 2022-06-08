@@ -42,9 +42,11 @@ Route::get('/list/psikolog/cari','Konsultasi\KonsultasiController@cari');
 
 //route Konsultasi
 Route::get('/patient/doctor-info','Konsultasi\PenjadwalanController@detailPsikolog');
-Route::get('/patient/doctor-info/edit/{id}','Konsultasi\PenjadwalanController@editJadwal');
-Route::post('/patient/doctor-info/update','Konsultasi\PenjadwalanController@updateJadwal');
-Route::post('/patient/doctor-info','Konsultasi\PenjadwalanController@store');
+Route::get('/patient/doctor-info/add','Konsultasi\PenjadwalanController@add');
+Route::post('/patient/doctor-info/store','Konsultasi\PenjadwalanController@storeKonsultasi');
+// Route::get('/patient/doctor-info/edit/{id}','Konsultasi\PenjadwalanController@editJadwal');
+// Route::post('/patient/doctor-info/update','Konsultasi\PenjadwalanController@updateJadwal');
+// Route::post('/patient/doctor-info','Konsultasi\PenjadwalanController@store');
 
 //--> Nazriyah Deny Tsaniyah
 Route::get('/patient/payment','Konsultasi\PembayaranController@infoPayment');

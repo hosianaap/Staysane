@@ -26,13 +26,19 @@
         p {
             font-size: 18px
         }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 25px
+        }
+
 
     </style>
 
     <div class="row m-0">
         <div class="d-flex justify-content-start align-content-center">
             @foreach($listakunpasien as $d)
-            <img alt="docpic" src="{{$d->fotopasien}}" id="docpic">
+            <img src="{{asset('data_file/'. $d->fotopasien)}}">
             <div class="col docname">
 
                 <h3><strong>{{ $d->namapasien }}</strong></h3>

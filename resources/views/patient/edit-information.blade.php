@@ -33,9 +33,8 @@
 	<br/>
 
 
-	<form action="/patient/doctor-info/update" method="POST">
+	<form action="/patient/doctor-info/store" method="POST">
 		{{ csrf_field() }}
-        {{-- @foreach($konsultasi as $p) --}}
 		{{-- <input type="hidden" name="id" value="{{ $p->sipp }}"> <br> --}}
         <div class="form-group">
            <h5> Consultation Type:</h5><br>
@@ -85,7 +84,6 @@
             <div style="padding-left: 40px">
                 <input type="submit" class="btn payment-bttn" value="Save Data"> </div>
     </form>
-    {{-- @endforeach --}}
     @endsection
 
 
