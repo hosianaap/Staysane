@@ -10,19 +10,21 @@ class CatatanController extends Controller
 {
     //
     public function catatanPsikolog(){
-    	return view('psikolog.catatan');
+        // $listakunpsikolog = DB::table('listakunpsikolog')
+        // ->leftjoin('penilaian', 'listakunpsikolog.sipp', '=', 'penilaian.sipp')
+        // ->where('sipp', $id)->get();
+        $users = DB::table('users')->get();
+        return view('psikolog.catatan',['users' => $users]);
+        // ,['listakunpsikolog' => $listakunpsikolog]);
+        // ,['listakunpsikolog' => $listakunpsikolog]);
     }
-    // public function penilaianPasien(){
-    // 	return view('patient.penilaian');
-    // }
-    public function store(Request $request)
+
+    public function storeCatatan(Request $request)
     {
-	DB::table('catatan')->insert([
-		'catatan' => $request->catatan,
-		'merklipstick' => $request->merklipstick,
-		'stocklipstick' => $request->stocklipstick,
-		'tersedia' => $request->tersedia
+        DB::table('catatan')->insert([
+		'idpasien' => $request->id,
+		'catatantext' => $request->catatantext
 	]);
-	return redirect('/lipstick');
-    }
+    return redirect('/list/doctor');
+}
 }

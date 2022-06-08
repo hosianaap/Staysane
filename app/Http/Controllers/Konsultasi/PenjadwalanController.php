@@ -10,8 +10,20 @@ class PenjadwalanController extends Controller
 {
     //
     public function patientSchedule(){
-    	return view('patient.scheduling');
+        $konsultasi = DB::table('konsultasi')
+        ->leftjoin('listakunpasien', 'konsultasi.idpasien', '=', 'listakunpasien.idpasien')
+        ->get();
+
+    	return view('patient.scheduling',['konsultasi' => $konsultasi]);
     }
+    public function psikologSchedule(){
+        $konsultasi = DB::table('konsultasi')
+        ->leftjoin('listakunpsikolog', 'konsultasi.sipp', '=', 'listakunpsikolog.sipp')
+        ->get();
+
+    	return view('psikolog.scheduling',['konsultasi' => $konsultasi]);
+    }
+
     public function detailPsikolog()
     {
     	$listakunpsikolog = DB::table('listakunpsikolog')
@@ -43,6 +55,8 @@ public function updateJadwal(Request $request)
 	DB::table('konsultasi')->where('idkonsultasi',$request->id)->update([
 		'mediakonsultasi' => $request->mediakonsultasi,
 		'waktukonsultasi' => $request->waktukonsultasi,
+		'waktukonsultasi' => $request->waktu,
+		'mediakonsultasi' => $request->media,
 	]);
 	return redirect('/patient/doctor-info');
 }

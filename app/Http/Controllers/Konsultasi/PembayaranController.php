@@ -9,19 +9,23 @@ use Illuminate\Support\Facades\DB;
 class PembayaranController extends Controller
 {
     //
-    public function infoPayment($id)
+    public function infoPayment()
     {
     	// mengambil data dari table psikolog
     	$listakunpsikolog = DB::table('listakunpsikolog')
         ->leftjoin('konsultasi', 'listakunpsikolog.sipp', '=', 'konsultasi.sipp')
-        ->where('sipp', $id)->get();
+        ->get();
         // passing data pegawai yang didapat ke view edit.blade.php
         return view('patient.payment', ['listakunpsikolog' => $listakunpsikolog]);
     	// mengirim data psikolog ke view index
     }
-    public function patientPayment()
+    public function patientPayment(Request $request)
     {
-        // mengambil data psikolog berdasarkan id yang dipilih
-
+        // menyimpan data psikolog berdasarkan id yang dipilih
+            DB::table('pembayaran')->insert([
+                'norek' => $request->norek
+            ]);
+            // alihkan halaman ke halaman pegawai
+            return redirect('/patient/schedule');
     }
 }

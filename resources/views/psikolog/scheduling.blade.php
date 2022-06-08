@@ -4,11 +4,11 @@
 @section('navbar-actived')
     <nav id="navbar" class="nav-menu navbar">
         <ul>
-            <li><a href="/patient/doctor" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
-                    <span>Psikolog</span></a></li>
-            <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
+            <li><a href="/psikolog/patient" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
+                    <span>Patient</span></a></li>
+            <li><a href="/psikolog/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
                     <span>Chat</span></a></li>
-            <li><a href="/patient/profile" class="btn nav-link active" role="button"><i class="bx bx-user"></i>
+            <li><a href="/psikolog/profile" class="btn nav-link " role="button"><i class="bx bx-user"></i>
                     <span>Profie</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
@@ -50,17 +50,18 @@
                             </thead>
                             <tbody>
                                 @foreach ($konsultasi as $ss)
-                                <tr class="candidates-list">
-                                    <td class="title">
-                                        {{ $ss->waktukonsultasi }}
-                                    </td>
-                                    <td class="candidate-list-favourite-time text-center">
-                                        {{ $ss->mediakonsultasi }}
-                                    </td>
-                                    <td class="candidate-list-favourite-time text-center">
-                                        <a href="/patient/chats" class="btn btn-danger" role="button">Go to Consulting Session</a>
-                                    </td>
-                                </tr>
+                                    <tr class="candidates-list">
+                                        <td class="title">
+                                            {{ $ss->waktukonsultasi }}
+                                        </td>
+                                        <td class="candidate-list-favourite-time text-center">
+                                            {{ $ss->mediakonsultasi }}
+                                        </td>
+                                        <td class="candidate-list-favourite-time text-center">
+                                            <a href="/psikolog/chats" class="btn btn-danger" role="button">Go to Consulting
+                                                Session</a>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

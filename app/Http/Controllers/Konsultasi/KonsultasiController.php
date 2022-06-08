@@ -37,7 +37,9 @@ class KonsultasiController extends Controller
     public function listPatient()
     {
     	// mengambil data dari table pasien
-    	$listakunpasien = DB::table('listakunpasien')->get();
+    	$listakunpasien = DB::table('listakunpasien')
+        ->leftjoin('konsultasi', 'listakunpasien.idpasien', '=', 'konsultasi.idpasien')
+        ->get();
     	// mengirim data pasien ke view index
     	return view('patient.list-patient',['listakunpasien' => $listakunpasien]);
     }

@@ -5,7 +5,7 @@
     <nav id="navbar" class="nav-menu navbar">
         <ul>
             <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i>
-                    <span>Doctor</span></a></li>
+                    <span>Psikolog</span></a></li>
             <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
                     <span>Chat</span></a></li>
             <li><a href="/patient/profile" class="btn nav-link " role="button"><i class="bx bx-user"></i>
@@ -52,12 +52,12 @@
                                         <td class="title">
                                             <div class="thumb">
                                                 <img class="img-fluid"
-                                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                                                    src="{{ $a->fotopsikolog }}" alt="">
                                             </div>
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
                                                     <div class="candidate-list-title">
-                                                        <h5 class="mb-0"><a href="#">{{ $a->namapsikolog }}</a>
+                                                        <h5 class="mb-0"><a href="/patient/doctor-info">{{ $a->namapsikolog }}</a>
                                                         </h5>
                                                     </div>
                                                 </div>

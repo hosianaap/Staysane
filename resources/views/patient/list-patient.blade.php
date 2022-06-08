@@ -51,8 +51,7 @@
                                     <tr class="candidates-list">
                                         <td class="title">
                                             <div class="thumb">
-                                                <img class="img-fluid"
-                                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                                                <img class="img-fluid" src="{{ $b->fotopasien }}" alt="">
                                             </div>
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
@@ -64,10 +63,10 @@
                                             </div>
                                         </td>
                                         <td class="candidate-list-favourite-time text-center">
-                                            <span class="candidate-list-time order-1">{{ $b->media }}</span>
+                                            <span class="candidate-list-time order-1">{{ $b->mediakonsultasi }}</span>
                                         </td>
                                         <td class="candidate-list-favourite-time text-center">
-                                            <span class="candidate-list-time order-1">{{ $b->jadwal }}</span>
+                                            <span class="candidate-list-time order-1">{{ $b->waktukonsultasi }}</span>
                                         </td>
                                     </tr>
                                 @endforeach
