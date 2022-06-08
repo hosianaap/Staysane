@@ -37,6 +37,20 @@
 		{{ csrf_field() }}
 		{{-- <input type="hidden" name="id" value="{{ $p->sipp }}"> <br> --}}
         <div class="form-group">
+            <h5> Doctor Name:</h5><br>
+            <select name="sipp" style="width: 13cm" >
+                @foreach($listakunpsikolog as $a)
+                 <option value="{{ $a->sipp }}">{{ $a->namapsikolog }}</option>
+                @endforeach
+            </select></div>
+        <div class="form-group">
+            <h5> Patient Name:</h5><br>
+            <select name="idpasien" style="width: 13cm" >
+                @foreach($listakunpasien as $p)
+                 <option value="{{ $p->idpasien }}">{{ $p->namapasien }}</option>
+                @endforeach
+            </select>
+        <div class="form-group">
            <h5> Consultation Type:</h5><br>
             <input type="radio" id="media1" name="mediakonsultasi" value="Chat"  checked="checked">
                 <label for="media1">Chat</label><br>
@@ -48,7 +62,7 @@
           </div>
           <div class="form-group">
             <h5> Date and Time:</h5><br>
-            <div class='input-group date' id='datetimepicker1'>
+            {{-- <div class='input-group date' id='datetimepicker1'>
                 <input type='text' class="form-control" />
                 <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
@@ -59,9 +73,9 @@
           $(function () {
               $('#datetimepicker1').datetimepicker();
           });
-       </script>
-          {{-- <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
-            <input style="width: 13cm" type='text' class="form-control" name="waktukonsultasi" required="required" />
+       </script> --}}
+          <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
+            <input style="width: 13cm" type='text' class="form-control" name="waktukonsultasi" required="required" placeholder="YYYY-MM-DD hh:mm:ss">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
             </span>
@@ -76,7 +90,7 @@
                 "defaultDate": new Date(),
             });
         });
-    </script> --}}
+    </script>
 		<br>
         <div class="d-flex" style="padding-top: 40px">
             <a href="/patient/doctor-info" class="btn payment-bttn"> Back

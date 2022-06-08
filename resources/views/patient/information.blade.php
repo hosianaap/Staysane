@@ -84,6 +84,13 @@
             <div class="col-lg-5 p-0 ps-lg-4">
                 <div class="row m-0">
                     <div class="col-12 px-0">
+                            <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
+                            </div>
+                            <div class="col-lg-5 p-0 ps-lg-4">
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                <a href="/patient/doctor-info/add"><div class="btn payment-bttn"> Select Schedule
+                                </div></a>
                         </div>
                     </div>
                         {{-- <div class="row m-0">
@@ -107,7 +114,7 @@
                             <div class="d-flex flex-row-reverse" style="padding-top: 100px">
                                 <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
                                 </div>
-                            </div>
+                            </div><br>
                             <div style="padding-left: 40px">
                                 <a href="/patient/doctor-info/add"><div class="btn payment-bttn"> Select Schedule
                                 </div></a>
@@ -118,5 +125,4 @@
             </div>
         </div>
     </div>
-
 @endsection
