@@ -15,7 +15,7 @@ class KonsultasiController extends Controller
     	$listakunpsikolog = DB::table('listakunpsikolog')
         ->select('listakunpsikolog.fotopsikolog','listakunpsikolog.namapsikolog', 'listakunpsikolog.experience', DB::raw('avg(penilaian.rating) AS rating'))
         ->leftjoin('penilaian', 'listakunpsikolog.sipp', '=', 'penilaian.sipp')
-        ->groupBy('penilaian.sipp')
+        ->groupBy('penilaian.sipp','listakunpsikolog.fotopsikolog','listakunpsikolog.namapsikolog', 'listakunpsikolog.experience')
         ->get();
     	// mengirim data psikolog ke view index
     	return view('psikolog.list-psikolog',['listakunpsikolog' => $listakunpsikolog]);
