@@ -25,6 +25,6 @@ class CatatanController extends Controller
 		'idpasien' => $request->id,
 		'catatantext' => $request->catatantext
 	]);
-    return redirect('/list/doctor');
+    return redirect('/psikolog/patient');
 }
 }
