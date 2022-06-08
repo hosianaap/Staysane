@@ -207,11 +207,11 @@
                         <div class="img-container">
                             <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
                         </div>
-                        <br>
+                        {{-- <br>
 
                         <div class="col docname">
                             <p style="vertical-align:middle">Dr. Nike Ardilla, M.Psi.</p>
-                        </div>
+                        </div> --}}
                 </center>
 
             </div>
@@ -224,7 +224,8 @@
                 <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Psikolog:</label>
                     <div class='col-sm-8 input-group date' id='sipp'>
-                        <select class="form-control" name="sipp" required>
+                        <select class="form-control" name="sipp" placeholder="Pilih Nama Psikolog" required>
+                        <option selected disabled value="">Pilih Nama Psikolog</option>
                             @foreach ($listakunpsikolog as $p)
                                     <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
                                 @endforeach
