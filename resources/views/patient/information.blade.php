@@ -44,7 +44,7 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                            <img src="{{asset('data_file/'. $d->fotopsikolog)}}">
+                            <img src="{{asset('data_file/'. $s->fotopsikolog)}}">
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                             <div style="padding-left: 40px">
-                                <a href="/patient/doctor-info/edit/{{$s->namapsikolog}}"><div class="btn payment-bttn"> Edit Schedule
+                                <a href="/patient/doctor-info/add"><div class="btn payment-bttn"> Select Schedule
                                 </div></a>
                                  @endforeach
                         </div>

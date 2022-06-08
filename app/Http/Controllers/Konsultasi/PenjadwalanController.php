@@ -43,19 +43,36 @@ public function store(Request $request)
 
 }
 
-public function editJadwal($id)
-{
+// public function editJadwal($id)
+// {
 
-	$konsultasi = DB::table('konsultasi')->where('idkonsultasi',$id)->get();
-	return view('patient.edit-information',['konsultasi' => $konsultasi]);
-}
+// 	$konsultasi = DB::table('konsultasi')->where('idkonsultasi',$id)->get();
+// 	return view('patient.edit-information',['konsultasi' => $konsultasi]);
+// }
 
-public function updateJadwal(Request $request)
-{
-	DB::table('konsultasi')->where('idkonsultasi',$request->id)->update([
-		'mediakonsultasi' => $request->mediakonsultasi,
-		'waktukonsultasi' => $request->waktukonsultasi
-    	]);
-	return redirect('/patient/doctor-info');
-}
+// public function updateJadwal(Request $request)
+// {
+// 	DB::table('konsultasi')->where('idkonsultasi',$request->id)->update([
+// 		'mediakonsultasi' => $request->mediakonsultasi,
+// 		'waktukonsultasi' => $request->waktukonsultasi
+//     	]);
+// 	return redirect('/patient/doctor-info');
+// }
+public function add()
+    {
+        $konsultasi = DB::table('konsultasi')->get();
+        return view('patient.edit-information');
+    }
+    // method untuk insert data ke table absen
+    public function storeKonsultasi(Request $request)
+    {
+        // insert data ke table absen
+        DB::table('konsultasi')->insert([
+
+            'mediakonsultasi' => $request->mediakonsultasi,
+            'waktukonsultasi' => $request->waktukonsultasi
+        ]);
+        // alihkan halaman ke halaman absen
+        return redirect('/patient/doctor-info');
+    }
 }

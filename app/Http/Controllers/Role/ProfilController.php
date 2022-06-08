@@ -55,7 +55,6 @@ public function UpdateProfilPatient(Request $request)
 {
     $file = $request->file('file');
     $tujuan_upload = 'data_file';
-    $namadanlokasi = $tujuan_upload . "/" . $file->getClientOriginalName();
 	DB::table('listakunpasien')->where('idpasien',$request->id)->update([
         'unamepasien' => $request->uname,
 		'namapasien' => $request->nama,
@@ -63,7 +62,7 @@ public function UpdateProfilPatient(Request $request)
 		'lokasi' => $request->location,
         'telppasien' => $request->phone,
         'passwordpasien' => $request->pass,
-        'fotopasien' => $namadanlokasi
+        'fotopasien' => $file->getClientOriginalName()
 	]);
     $file->move($tujuan_upload,$file->getClientOriginalName());
 	return redirect('/patient/profile');
