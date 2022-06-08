@@ -18,11 +18,16 @@
         p{
             font-size: 18px
         }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 25px
+        }
     </style>
     <div class="row m-0">
         <div class="d-flex justify-content-start align-content-center">
             @foreach($listakunpsikolog as $d)
-            <img src="{{$d->fotopsikolog}}" width="100px">
+            <img src="{{asset('data_file/'. $d->fotopsikolog)}}">
             <div class="col docname">
                 <h3><strong>{{ $d->namapsikolog }}</strong></h3>
                 <br>

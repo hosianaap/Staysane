@@ -1,5 +1,5 @@
 @extends('layout.main-patient-layout')
-@section('mainTitle', 'Edit My Schedule')
+@section('mainTitle', 'Select My Schedule')
 @section('navbar-actived')
   <nav id="navbar" class="nav-menu navbar">
       <style>

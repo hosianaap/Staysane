@@ -17,6 +17,11 @@
             order: 0;
             flex-grow: 0;
         }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 25px
+        }
 
 
     </style>
@@ -39,7 +44,7 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                            <img alt="docpic" src="{{$s->fotopsikolog}}" id="docpic">
+                            <img src="{{asset('data_file/'. $d->fotopsikolog)}}">
                         </div>
                     </div>
 
