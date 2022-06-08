@@ -44,7 +44,7 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                                <img alt="docpic" src="{{ $s->fotopsikolog }}" id="docpic">
+                            <img src="{{asset('data_file/'. $s->fotopsikolog)}}">
                         </div>
                     </div>
 
@@ -84,6 +84,11 @@
             <div class="col-lg-5 p-0 ps-lg-4">
                 <div class="row m-0">
                     <div class="col-12 px-0">
+                            <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
+                            </div>
+                            <div class="col-lg-5 p-0 ps-lg-4">
+                                <div class="row m-0">
+                        </div>
                     </div>
                 </div>
                 {{-- <div class="row m-0">
@@ -105,19 +110,14 @@
                         {{-- @endforeach --}}
                         <div class="row m-0">
                             <div class="d-flex flex-row-reverse" style="padding-top: 100px">
-                                <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
-                                </div>
-                            </div>
+                                {{-- <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
+                                </div> --}}
+                            </div><br>
                             <div style="padding-left: 40px">
                                 <a href="/patient/doctor-info/add"><div class="btn payment-bttn"> Select Schedule
                                 </div></a>
-                                 @endforeach
                         </div>
                     </div>
-                    <div style="padding-left: 40px">
-                        <a href="/patient/doctor-info/edit/{{ $s->namapsikolog }}">
-                            <div class="btn payment-bttn"> Edit Schedule
-                            </div>
                         </a>
                         @endforeach
                     </div>
