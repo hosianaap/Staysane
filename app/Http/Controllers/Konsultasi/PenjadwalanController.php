@@ -54,10 +54,8 @@ public function updateJadwal(Request $request)
 {
 	DB::table('konsultasi')->where('idkonsultasi',$request->id)->update([
 		'mediakonsultasi' => $request->mediakonsultasi,
-		'waktukonsultasi' => $request->waktukonsultasi,
-		'waktukonsultasi' => $request->waktu,
-		'mediakonsultasi' => $request->media,
-	]);
+		'waktukonsultasi' => $request->waktukonsultasi
+    	]);
 	return redirect('/patient/doctor-info');
 }
 }

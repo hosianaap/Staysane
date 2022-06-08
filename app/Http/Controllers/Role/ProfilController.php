@@ -30,14 +30,14 @@ public function UpdateProfilPsikolog(Request $request)
 {
     $file = $request->file('file');
     $tujuan_upload = 'data_file';
-    $namadanlokasi = $tujuan_upload . "/" . $file->getClientOriginalName();
+
 
 	DB::table('listakunpsikolog')->where('sipp',$request->id)->update([
 		'namapsikolog' => $request->nama,
 		'sipp' => $request-> sipp,
 		'emailpsikolog' => $request->email,
 		'passwordpsikolog' => $request->pass,
-        'fotopsikolog' => $namadanlokasi,
+        'fotopsikolog' => $file->getClientOriginalName(),
         'experience' => $request->exp,
         'alumnus' => $request->alumnus,
         'workplace' => $request->workplace

@@ -19,7 +19,7 @@
         @foreach($listakunpsikolog as $p)
 		<input type="hidden" name="id" value="{{ $p->sipp }}"> <br>
         <div class="form-group">
-            <label for="nama">Profile Photo:</label>
+            <label for="foto">Profile Photo:</label>
             <input type="file" name="file">
           </div>
         <div class="form-group">
