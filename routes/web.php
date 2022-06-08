@@ -48,7 +48,7 @@ Route::post('/patient/doctor-info/store','Konsultasi\PenjadwalanController@store
 
 //--> Nazriyah Deny Tsaniyah
 Route::get('/patient/payment','Konsultasi\PembayaranController@infoPayment');
-Route::post('/patient/payment/save','Konsultasi\PembayaranController@patientPayment');
+Route::post('/patient/payment/store','Konsultasi\PembayaranController@patientPaymentStore');
 Route::get('/patient/schedule','Konsultasi\PenjadwalanController@patientSchedule');
 Route::get('/patient/chats','Konsultasi\KonsultasiController@chatPatient');
 Route::get('/psikolog/chats','Konsultasi\KonsultasiController@chatPsikolog');

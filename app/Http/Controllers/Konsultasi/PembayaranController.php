@@ -19,7 +19,7 @@ class PembayaranController extends Controller
         return view('patient.payment', ['listakunpsikolog' => $listakunpsikolog]);
     	// mengirim data psikolog ke view index
     }
-    public function patientPayment(Request $request)
+    public function patientPaymentStore(Request $request)
     {
         // menyimpan data psikolog berdasarkan id yang dipilih
             DB::table('pembayaran')->insert([
