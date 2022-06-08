@@ -1,6 +1,6 @@
 @extends('layout.main-patient-layout')
 
-@section('mainTitle', 'Chat with Psikolog')
+@section('mainTitle', 'Chat')
 @section('navbar-actived')
     <nav id="navbar" class="nav-menu navbar">
         <ul>
