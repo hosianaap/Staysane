@@ -1,6 +1,6 @@
 @extends('layout.main-patient-layout')
 
-@section('mainTitle', 'Payment')
+@section('mainTitle', 'Pembayaran Konsultasi')
 @section('navbar-actived')
     <nav id="navbar" class="nav-menu navbar">
         <ul>
