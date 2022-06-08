@@ -227,8 +227,8 @@
                         <select class="form-control" name="sipp" placeholder="Pilih Nama Psikolog" required>
                         <option selected disabled value="">Pilih Nama Psikolog</option>
                             @foreach ($listakunpsikolog as $p)
-                                    <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
-                                @endforeach
+                                <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -266,10 +266,10 @@
                         <input type="radio" id="star1" name="rating" value="1" required/><label class="full" for="star1"
                             title="Poor - 1 star"></label>
 
-                        <input type="radio" class="reset-option" name="rating" value="reset" />
-                    </fieldset>
+                            <input type="radio" class="reset-option" name="rating" value="reset" />
+                        </fieldset>
+                    </div>
                 </div>
-            </div>
 
                 <div class="form-group row">
                     <label for="comment">Review:</label>
