@@ -28,6 +28,7 @@
                         <span>Dr. Nike Ardilla, M.Psi.</span>
                         <p>2 Messages</p>
                     </div>
+                    <span id="action_menu_btn"><a class="btn payment-bttn" href="chats/catatan">End Chat</a></span>
                 </div>
             </div>
             <div class="card-body msg_card_body">

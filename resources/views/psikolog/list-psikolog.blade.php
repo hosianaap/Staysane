@@ -67,7 +67,7 @@
                                                 experience</span>
                                         </td>
                                         <td class="candidate-list-favourite-time text-center">
-                                            <span class="candidate-list-time order-1">{{ $a->rating }}</span>
+                                            <span class="candidate-list-time order-1">{{ number_format($a->rating, 1) }}</span>
                                         </td>
                                     </tr>
                                 @endforeach

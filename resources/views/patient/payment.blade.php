@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="container">
-        <form action="/patient/payment/save" method="post">
+        <form action="/patient/payment/store" method="post">
             {{ csrf_field() }}
             <div class="row m-0">
                 <div class="col-lg-7 pb-5 pe-lg-5">

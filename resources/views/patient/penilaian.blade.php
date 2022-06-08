@@ -24,7 +24,7 @@
             alert("Review minimal 5 kata!");
          return (false);
         }
-        if (wordCount > 25 ){
+        else if (wordCount > 25 ){
             alert("Review maksimal 25 kata!");
          return (false);
         }

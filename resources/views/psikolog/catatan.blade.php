@@ -200,10 +200,7 @@
                             <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
                         </div>
                         <br>
-
-                        <div class="col docname">
-                            <p style="vertical-align:middle">Alex Nikiforov</p>
-                        </div>
+                    </div>
                 </center>
 
             </div>
