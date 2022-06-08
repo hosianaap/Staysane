@@ -23,8 +23,8 @@
             alert("Catatan minimal 5 kata!");
          return (false);
         }
-        if (wordCount > 100 ){
-            alert("Catatan maksimal 100 kata!");
+        if (wordCount > 25 ){
+            alert("Catatan maksimal 25 kata!");
          return (false);
         }
 

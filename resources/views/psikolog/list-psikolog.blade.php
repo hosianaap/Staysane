@@ -23,7 +23,7 @@
 
                 <div class="search">
                     <i class="fa fa-search"></i>
-                    <form action="/list/psikolog/cari" method="GET">
+                    <form action="/psikolog/patient/cari" method="GET">
                         <input type="text" class="form-control" name="cari" value="{{ old('cari') }}"
                             placeholder="Find Your Psychologist">
                         <button class="btn btn-primary" type="submit" value="Cari">Search</button>

@@ -23,7 +23,7 @@
 
                 <div class="search">
                     <i class="fa fa-search"></i>
-                    <form action="/list/patient/search" method="GET">
+                    <form action="/psikolog/patient/search" method="GET">
                         <input type="text" class="form-control" name="search" value="{{ old('search') }}"
                             placeholder="Find Your Patient">
                         <button class="btn btn-primary" type="submit" value="Search">Search</button>
@@ -56,7 +56,7 @@
                                             <div class="candidate-list-details">
                                                 <div class="candidate-list-info">
                                                     <div class="candidate-list-title">
-                                                        <h5 class="mb-0"><a href="#">{{ $b->namapasien }}</a>
+                                                        <h5 class="mb-0"><a href="/patient/profile">{{ $b->namapasien }}</a>
                                                         </h5>
                                                     </div>
                                                 </div>
