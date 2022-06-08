@@ -2,41 +2,35 @@
 
 @section('mainTitle', 'Penilaian')
 @section('navbar-actived')
-<nav id="navbar" class="nav-menu navbar">
-    <ul>
-        <li><a href="/patient/doctor" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
-                <span>Psikolog</span></a></li>
-        <li><a href="/patient/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
-                <span>Chat</span></a></li>
-        <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
-                <span>ProfiLe</span></a></li>
-    </ul>
-</nav><!-- .nav-menu -->
+    <nav id="navbar" class="nav-menu navbar">
+        <ul>
+            <li><a href="/patient/doctor" class="btn nav-link" role="button"><i class="bi bi-bag-plus"></i>
+                    <span>Psikolog</span></a></li>
+            <li><a href="/patient/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
+                    <span>Chat</span></a></li>
+            <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
+                    <span>ProfiLe</span></a></li>
+        </ul>
+    </nav><!-- .nav-menu -->
 
 @endsection
 <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
     type='text/css' media='all' />
 
-    <script type="text/javascript">
-    function validate(){
+<script type="text/javascript">
+    function validate() {
         var wordCount = [document.forms[0].reviewtext.value].join(' ').split(' ').length;
-        if (wordCount < 5 ){
+        // let x = document.forms[0].["rating"].value;
+        if (wordCount < 5) {
             alert("Review minimal 5 kata!");
-         return (false);
+            return (false);
         }
-        if (wordCount > 25 ){
+        if (wordCount > 25) {
             alert("Review maksimal 25 kata!");
-         return (false);
+            return (false);
         }
-        let x = document.forms[0].["rating"].value;
-        if (x == "") {
-            alert("Rating must be filled out");
-            return false;
-        }
-
     }
-
-        </script>
+</script>
 
 <style>
     .container p-3 my-3 {
@@ -207,11 +201,6 @@
                         <div class="img-container">
                             <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
                         </div>
-                        {{-- <br>
-
-                        <div class="col docname">
-                            <p style="vertical-align:middle">Dr. Nike Ardilla, M.Psi.</p>
-                        </div> --}}
                 </center>
 
             </div>
@@ -220,12 +209,11 @@
         <div class="container mt-3 mb-4">
             <form action="/submitpenilaian" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                {{-- value="{{ $s->sipp }} --}}
                 <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Psikolog:</label>
                     <div class='col-sm-8 input-group date' id='sipp'>
                         <select class="form-control" name="sipp" placeholder="Pilih Nama Psikolog" required>
-                        <option selected disabled value="">Pilih Nama Psikolog</option>
+                            <option selected disabled value="">Pilih Nama Psikolog</option>
                             @foreach ($listakunpsikolog as $p)
                                 <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
                             @endforeach
@@ -236,35 +224,22 @@
                 <div class="form-group row">
                     <label for="rating">Rating:</label>
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-                    {{-- <form>
-  <input type="radio" class="star-input" name="rating" id="star-1" value="1">
-  <label for="star-1" class="star"><i class="fas fa-star"></i></label>
-  <input type="radio" class="star-input" name="rating" id="star-2" value="2">
-  <label for="star-2" class="star"><i class="fas fa-star"></i></label>
-  <input type="radio" class="star-input" name="rating" id="star-3" value="3">
-  <label for="star-3" class="star"><i class="fas fa-star"></i></label>
-  <input type="radio" class="star-input" name="rating" id="star-4" value="4">
-  <label for="star-4" class="star"><i class="fas fa-star"></i></label>
-  <input type="radio" class="star-input" name="rating" id="star-5" value="5" checked>
-  <label for="star-5" class="star"><i class="fas fa-star"></i></label>
-  <button type="submit">Send</button>
-</form> --}}
-<div class='col-sm-8' id='rating'>
-                    <fieldset class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" required /><label class="full" for="star5"
-                            title="Outstanding - 5 stars" if></label>
+                    <div class='col-sm-8' id='rating'>
+                        <fieldset class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" required /><label class="full"
+                                for="star5" title="Outstanding - 5 stars" if></label>
 
-                        <input type="radio" id="star4" name="rating" value="4" required /><label class="full" for="star4"
-                            title="Very Satisfied - 4 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" required /><label class="full"
+                                for="star4" title="Very Satisfied - 4 stars"></label>
 
-                        <input type="radio" id="star3" name="rating" value="3" required /><label class="full" for="star3"
-                            title="Satisfied - 3 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" required /><label class="full"
+                                for="star3" title="Satisfied - 3 stars"></label>
 
-                        <input type="radio" id="star2" name="rating" value="2" required /><label class="full" for="star2"
-                            title="Unsatisfied - 2 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" required /><label class="full"
+                                for="star2" title="Unsatisfied - 2 stars"></label>
 
-                        <input type="radio" id="star1" name="rating" value="1" required/><label class="full" for="star1"
-                            title="Poor - 1 star"></label>
+                            <input type="radio" id="star1" name="rating" value="1" required /><label class="full"
+                                for="star1" title="Poor - 1 star"></label>
 
                             <input type="radio" class="reset-option" name="rating" value="reset" />
                         </fieldset>
@@ -274,34 +249,14 @@
                 <div class="form-group row">
                     <label for="comment">Review:</label>
                     <div class='col-sm-14' id='reviewtext'>
-                    <textarea class="form-control" for="reviewtext" name="reviewtext" rows="5" id="comment" placeholder="How was your session?" required></textarea>
-                    <br>
-                    <input type="submit" class="btn catatan-bttn" value="Submit">
-                    {{-- <input type="submit" class="btn catatan-bttn" value="OK"><a href="/patient/doctor" style="color: white"> Submit </a> --}}
+                        <textarea class="form-control" for="reviewtext" name="reviewtext" rows="5" id="comment"
+                            placeholder="How was your session?" required></textarea>
+                        <br>
+                        <input type="submit" class="btn catatan-bttn" value="Submit">
 
-            </div>
-            </div>
-
-                {{-- @endforeach --}}
+                    </div>
+                </div>
             </form>
-            {{-- <script>
-            $(document).ready(function(){
-
-                $("input[type='radio']").click(function(){
-                      var sim =  $("input[type='radio']:checked").val();
-                      //alert(sim);
-                      if (sim<3) {
-                      $('.myratings').css('color','red');
-                      $(".myratings").text(sim);
-                   }else{
-                      $('.myratings').css('color','green');
-                      $(".myratings").text(sim);
-                   }
-                   });
-
-
-                });
-</script> --}}
         </div>
     </div>
 
