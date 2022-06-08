@@ -209,7 +209,6 @@
         <div class="container mt-3 mb-4">
             <form action="/submitcatatan" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                {{-- value="{{ $s->sipp }} --}}
                 <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Pasien:</label>
                     <div class='col-sm-8 input-group date' id='id'>
@@ -228,10 +227,9 @@
                     <br>
                     <br>
                     <input type="submit" class="btn catatan-bttn" value="Submit">
-                    {{-- <input type="submit" class="btn catatan-bttn" value="OK"><a href="/patient/doctor" style="color: white"> Submit </a> --}}
+
                 </div>
             </div>
-                {{-- @endforeach --}}
             </form>
 
 
