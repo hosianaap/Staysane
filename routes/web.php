@@ -56,7 +56,6 @@ Route::get('/psikolog/schedule','Konsultasi\PenjadwalanController@psikologSchedu
 
 
 
-
 //--> Desi
 Route::get('/patient/doctor', 'Konsultasi\KonsultasiController@listPsikolog');
 Route::get('/list/patient', 'Konsultasi\KonsultasiController@listPatient');

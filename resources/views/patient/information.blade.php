@@ -44,7 +44,7 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                            <img src="{{asset('data_file/'. $d->fotopsikolog)}}">
+                            <img src="{{asset('data_file/'. $s->fotopsikolog)}}">
                         </div>
                     </div>
 
