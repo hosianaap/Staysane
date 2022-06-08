@@ -489,7 +489,14 @@ body {
     font-size: 10px;
     color: #404041;
 }
-
+#action_menu_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
 .msg_cotainer {
     margin-top: auto;
     margin-bottom: auto;

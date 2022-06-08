@@ -9,7 +9,7 @@
             <li><a href="/patient/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
                     <span>Chat</span></a></li>
             <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
-                    <span>Profie</span></a></li>
+                    <span>Profile</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
 @endsection
@@ -28,6 +28,7 @@
                         <span>Dr. Nike Ardilla, M.Psi.</span>
                         <p>2 Messages</p>
                     </div>
+                    <span id="action_menu_btn"><a class="btn payment-bttn" href="chats/penilaian">End Chat</a></span>
                 </div>
             </div>
             <div class="card-body msg_card_body">

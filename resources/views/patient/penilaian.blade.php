@@ -9,7 +9,7 @@
         <li><a href="/patient/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
                 <span>Chat</span></a></li>
         <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
-                <span>Profie</span></a></li>
+                <span>ProfiLe</span></a></li>
     </ul>
 </nav><!-- .nav-menu -->
 
@@ -227,8 +227,8 @@
                         <select class="form-control" name="sipp" placeholder="Pilih Nama Psikolog" required>
                         <option selected disabled value="">Pilih Nama Psikolog</option>
                             @foreach ($listakunpsikolog as $p)
-                                    <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
-                                @endforeach
+                                <option value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -266,10 +266,10 @@
                         <input type="radio" id="star1" name="rating" value="1" required/><label class="full" for="star1"
                             title="Poor - 1 star"></label>
 
-                        <input type="radio" class="reset-option" name="rating" value="reset" />
-                    </fieldset>
+                            <input type="radio" class="reset-option" name="rating" value="reset" />
+                        </fieldset>
+                    </div>
                 </div>
-            </div>
 
                 <div class="form-group row">
                     <label for="comment">Review:</label>
