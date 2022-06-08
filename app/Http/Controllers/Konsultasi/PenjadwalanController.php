@@ -19,27 +19,31 @@ class PenjadwalanController extends Controller
 ->get();
     	return view('patient.information',['listakunpsikolog' => $listakunpsikolog]);
     }
-    // public function jadwalKonsultasi()
-    // {
-    // 	$konsultasi = DB::table('konsultasi')->get();
-    // 	return view('patient.information',['konsultasi' => $konsultasi]);
-    // }
 
-    public function EditInfoKonsultasi($id)
+public function store(Request $request)
+{
+
+	DB::table('konsultasi')->insert([
+		'mediakonsultasi' => $request->media,
+		'waktukonsultasi' => $request->waktu
+	]);
+	return redirect('/patient/doctor-info');
+
+}
+
+public function editJadwal($id)
 {
 
 	$konsultasi = DB::table('konsultasi')->where('idkonsultasi',$id)->get();
 	return view('patient.edit-information',['konsultasi' => $konsultasi]);
 }
 
-
-public function UpdateInfoKonsultasi(Request $request)
+public function updateJadwal(Request $request)
 {
-
 	DB::table('konsultasi')->where('idkonsultasi',$request->id)->update([
-		'waktukonsultasi' => $request->waktu,
-		'mediakonsultasi' => $request-> media,
+		'mediakonsultasi' => $request->mediakonsultasi,
+		'waktukonsultasi' => $request->waktukonsultasi,
 	]);
-	return redirect('/psikolog/doctor-info');
+	return redirect('/patient/doctor-info');
 }
 }

@@ -17,34 +17,7 @@
             order: 0;
             flex-grow: 0;
         }
-        .border1 {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 3px 4px;
-            width: 110px;
-            height: 30px;
-            /* Global/06. Info */
-            background: #17A2B8;
-            border-radius: 40px;
-            /* Inside auto layout */
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
-        input[type='radio'] {
-  box-sizing: border-box;
-  appearance: none;
-  background: white;
-  outline: 2px solid #17A2B8;
-  border: 3px solid #17A2B8;
-  width: 16px;
-  height: 16px;
-}
 
-input[type='radio']:checked {
-  background: #333;
-}
 
     </style>
     <nav id="navbar" class="nav-menu navbar">
@@ -88,7 +61,6 @@ input[type='radio']:checked {
                             <p class="border">{{ $s->experience }} years</p>
                         </b><br><br>
                     </div>
-                    @endforeach
                     <div class="row m-0">
                         <div class="col-12 px-4">
                             <br><br>
@@ -109,12 +81,11 @@ input[type='radio']:checked {
                     <div class="col-12 px-0">
                         </div>
                     </div>
-                        <div class="row m-0">
+                        {{-- <div class="row m-0">
                             <div class="col-12 px-4">
                                 <div class="d-flexs">
                                     {{-- @foreach($konsultasi as $k) --}}
-                                       <h5>Date and Time</h5><br>
-                                       {{-- <p>{{ $k->waktukonsultasi }}</p> --}}
+                                       {{-- <h5>Date and Time</h5><br>
                                 </div>
                             </div>
                         </div>
@@ -124,19 +95,18 @@ input[type='radio']:checked {
                             <div class="d-flexs">
                                     <h5>Consultation Type</h5><br>
                             </div>
-                            </div>
-                        </div>
+                            </div> --}}
+                         {{-- </div>  --}}
                         {{-- @endforeach --}}
                         <div class="row m-0">
                             <div class="d-flex flex-row-reverse" style="padding-top: 100px">
                                 <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
                                 </div>
                             </div>
-                            {{-- @foreach ($listakunpsikolog as $s)
                             <div style="padding-left: 40px">
-                                <a href="/patient/doctor-info/schedule{{$s->sipp}}"><div class="btn payment-bttn"> Edit Schedule
+                                <a href="/patient/doctor-info/edit/{{$s->namapsikolog}}"><div class="btn payment-bttn"> Edit Schedule
                                 </div></a>
-                                 @endforeach --}}
+                                 @endforeach
                         </div>
                     </div>
                 </div>
