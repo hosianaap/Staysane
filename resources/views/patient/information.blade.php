@@ -28,11 +28,11 @@
     <nav id="navbar" class="nav-menu navbar">
         <ul>
             <li><a href="/patient/doctor" class="btn nav-link active" role="button"><i class="bi bi-bag-plus"></i>
-                    <span>Doctor</span></a></li>
+                    <span>Psikolog</span></a></li>
             <li><a href="/patient/chats" class="btn nav-link" role="button"><i class="bi bi-chat-dots"></i>
                     <span>Chat</span></a></li>
-            <li><a href="/patient/profile" class="btn nav-link" role="button"><i class="bx bx-user"></i>
-                    <span>Profie</span></a></li>
+            <li><a href="/patient/profile" class="btn nav-link " role="button"><i class="bx bx-user"></i>
+                    <span>Profile</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
 @endsection
@@ -44,15 +44,15 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                            <img src="{{asset('data_file/'. $s->fotopsikolog)}}">
+                                <img alt="docpic" src="{{ $s->fotopsikolog }}" id="docpic">
                         </div>
                     </div>
 
                     <div class="row m-0 detail-order">
-                                <h3><strong>{{ $s->namapsikolog }}</strong></h3>
-                                <br>
-                                <br>
-                                <br>
+                        <h3><strong>{{ $s->namapsikolog }}</strong></h3>
+                        <br>
+                        <br>
+                        <br>
                         <h5>Alumnus</h5>
                         <b>
                             <p>{{ $s->alumnus }}</p>
@@ -84,13 +84,13 @@
             <div class="col-lg-5 p-0 ps-lg-4">
                 <div class="row m-0">
                     <div class="col-12 px-0">
-                        </div>
                     </div>
-                        {{-- <div class="row m-0">
+                </div>
+                {{-- <div class="row m-0">
                             <div class="col-12 px-4">
                                 <div class="d-flexs">
-                                    {{-- @foreach($konsultasi as $k) --}}
-                                       {{-- <h5>Date and Time</h5><br>
+                                    {{-- @foreach ($konsultasi as $k) --}}
+                {{-- <h5>Date and Time</h5><br>
                                 </div>
                             </div>
                         </div>
@@ -114,9 +114,17 @@
                                  @endforeach
                         </div>
                     </div>
+                    <div style="padding-left: 40px">
+                        <a href="/patient/doctor-info/edit/{{ $s->namapsikolog }}">
+                            <div class="btn payment-bttn"> Edit Schedule
+                            </div>
+                        </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 @endsection

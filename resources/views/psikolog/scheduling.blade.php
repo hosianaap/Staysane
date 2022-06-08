@@ -9,7 +9,7 @@
             <li><a href="/psikolog/chats" class="btn nav-link active" role="button"><i class="bi bi-chat-dots"></i>
                     <span>Chat</span></a></li>
             <li><a href="/psikolog/profile" class="btn nav-link " role="button"><i class="bx bx-user"></i>
-                    <span>Profie</span></a></li>
+                    <span>Profile</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
 @endsection
