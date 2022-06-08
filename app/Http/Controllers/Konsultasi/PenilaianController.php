@@ -23,6 +23,6 @@ class PenilaianController extends Controller
         'rating' => $request->rating,
 		'reviewtext' => $request->reviewtext
 	]);
-    return redirect('/list/psikolog');
+    return redirect('/patient/doctor');
 }
 }
