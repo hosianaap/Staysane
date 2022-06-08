@@ -16,6 +16,20 @@
 @endsection
 <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1'
     type='text/css' media='all' />
+     <script type="text/javascript">
+    function validate(){
+        var wordCount = [document.forms[0].catatantext.value].join(' ').split(' ').length;
+        if (wordCount < 5 ){
+            alert("Catatan minimal 5 kata!");
+         return (false);
+        }
+        if (wordCount > 100 ){
+            alert("Catatan maksimal 100 kata!");
+         return (false);
+        }
+
+    }
+    </script>
 <style>
     .container p-3 my-3 {
         position: absolute;
@@ -196,13 +210,13 @@
 
         </div>
         <div class="container mt-3 mb-4">
-            <form action="/submitcatatan" method="POST" enctype="multipart/form-data">
+            <form action="/submitcatatan" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{-- value="{{ $s->sipp }} --}}
                 <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Pasien:</label>
                     <div class='col-sm-8 input-group date' id='id'>
-                        <select class="form-control" name="id">
+                        <select class="form-control" name="id" required>
                             @foreach ($users as $u)
                                     <option value="{{ $u->id }}"> {{ $u->name }}</option>
                                 @endforeach
@@ -213,7 +227,7 @@
                 <div class="form-group row">
                     <label for="comment">Catatan:</label>
                     <div class='col-sm-14' id='reviewtext'>
-                    <textarea class="form-control" for="catatantext" name="catatantext" rows="5" id="comment" placeholder="Any note for the patient?"></textarea>
+                    <textarea class="form-control" for="catatantext" name="catatantext" rows="5" id="comment" placeholder="Any note for the patient?" required></textarea>
                     <br>
                     <br>
                     <input type="submit" class="btn catatan-bttn" value="Submit">
