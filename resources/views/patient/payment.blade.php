@@ -24,7 +24,7 @@
                         @foreach ($listakunpsikolog as $ip)
                             <div class="row m-0">
                                 <div class="d-flex justify-content-start align-content-center">
-                                    <img alt="docpic" src="{{ $ip->fotopsikolog }}" id="docpic">
+                                    <img alt="docpic" src="{{ asset('data_file/' . $ip->fotopsikolog) }}" id="docpic">
                                     <div class="col docname">
                                         <h3><strong>{{ $ip->namapsikolog }}</strong></h3>
                                     </div>

@@ -68,13 +68,11 @@
                     @endforeach
                 </div>
                 <div class="d-flex" style="padding-top: 40px">
-                    <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
-                    </div>
+                    <a href="/patient/payment" class="btn payment-bttn" style="color: white"> Book </a>
 
                     <div style="padding-left: 40px">
-                        <div class="btn payment-bttn"><a href="/patient/doctor-info/add" style="color: white"> Select
-                                Schedule</a>
-                        </div>
+                        <a href="/patient/doctor-info/add" class="btn payment-bttn" style="color: white"> Select
+                            Schedule</a>
                     </div>
                 </div>
                 {{-- <div class="row m-0">

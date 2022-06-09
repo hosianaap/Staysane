@@ -13,8 +13,8 @@ class CatatanController extends Controller
         // $listakunpsikolog = DB::table('listakunpsikolog')
         // ->leftjoin('penilaian', 'listakunpsikolog.sipp', '=', 'penilaian.sipp')
         // ->where('sipp', $id)->get();
-        $users = DB::table('users')->get();
-        return view('psikolog.catatan',['users' => $users]);
+        $listakunpasien = DB::table('listakunpasien')->get();
+        return view('psikolog.catatan',['listakunpasien' => $listakunpasien]);
         // ,['listakunpsikolog' => $listakunpsikolog]);
         // ,['listakunpsikolog' => $listakunpsikolog]);
     }
@@ -22,7 +22,7 @@ class CatatanController extends Controller
     public function storeCatatan(Request $request)
     {
         DB::table('catatan')->insert([
-		'idpasien' => $request->id,
+		'idpasien' => $request->idpasien,
 		'catatantext' => $request->catatantext
 	]);
     return redirect('/psikolog/patient');

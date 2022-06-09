@@ -51,13 +51,9 @@
                 @endforeach
             </select>
         <div class="form-group">
-           <h5> Consultation Type:</h5><br>
+            <br><h5> Consultation Type:</h5><br>
             <input type="radio" id="media1" name="mediakonsultasi" value="Chat"  checked="checked">
                 <label for="media1">Chat</label><br>
-                <input type="radio" id="media2" name="mediakonsultasi" value="VideoCall"   checked="checked" >
-                <label for="media1">Video Call</label><br>
-                <input type="radio" id="media3" name="mediakonsultasi" value="VoiceCall"  checked="checked" >
-                <label for="media3">VoiceCall</label><br>
 
         </div>
         <div class="form-group">

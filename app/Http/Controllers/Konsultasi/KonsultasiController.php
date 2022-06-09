@@ -62,7 +62,8 @@ class KonsultasiController extends Controller
 
     //Nazriyah deny T
     public function chatPatient() {
-        return view('patient.chat');
+        $listakunpsikolog = DB::table('listakunpsikolog')->get();
+        return view('patient.chat',['listakunpsikolog' => $listakunpsikolog]);
     }
     public function chatPsikolog() {
         return view('psikolog.chat');

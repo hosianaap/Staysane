@@ -20,14 +20,16 @@
         <div class="card">
             <div class="card-header msg_head">
                 <div class="d-flex bd-highlight">
+                    @foreach ( $listakunpsikolog as $p )
                     <div class="img_cont">
-                        <img src="/images/doctorprofile3.png" class="rounded-circle user_img">
+                        <img src="{{ asset('data_file/' . $p->fotopsikolog) }}" class="rounded-circle user_img">
                         <span class="online_icon"></span>
                     </div>
                     <div class="user_info">
-                        <span>Dr. Nike Ardilla, M.Psi.</span>
+                        <span>{{ $p->namapsikolog }}</span>
                         <p>2 Messages</p>
                     </div>
+                    @endforeach
                     <span id="action_menu_btn"><a class="btn payment-bttn" href="chats/penilaian">End Chat</a></span>
                 </div>
             </div>

@@ -193,25 +193,23 @@
 
 
     <div class="penilaian">
-        <div class="container">
-
-            <div class="row profile">
-                <center>
-                    <div class="col-md-3">
-                        <div class="img-container">
-                            @foreach ($listakunpsikolog as $p)
-                            <img alt="docpic" style="vertical-align:middle" id= "docpic" src="{{ asset('data_file/' . $p->fotopsikolog) }}">
-                            @endforeach
-                        </div>
-                </center>
-
-            </div>
-
-        </div>
         <div class="container mt-3 mb-4">
             <form action="/submitpenilaian" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="form-group row">
+                <div class="container">
+                    <div class="row profile">
+                        <center>
+                            <div class="col-md-3">
+                                <div class="img-container">
+                                    @foreach ($listakunpsikolog as $p)
+                                    <img alt="docpic" style="vertical-align:middle" id= "docpic" src="{{ asset('data_file/' . $p->fotopsikolog) }}">
+                                    <h2 style="padding-top: 20px"><input name="sipp" type="hidden" value="{{ $p->sipp }}"> {{ $p->namapsikolog }}</h2>
+                                    @endforeach
+                                </div>
+                        </center>
+                    </div>
+                </div>
+                {{-- <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Psikolog:</label>
                     <div class='col-sm-8 input-group date' id='sipp'>
                         <select class="form-control" name="sipp" placeholder="Pilih Nama Psikolog" required>
@@ -221,7 +219,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div> --}}
                 <br>
                 <div class="form-group row">
                     <label for="rating">Rating:</label>

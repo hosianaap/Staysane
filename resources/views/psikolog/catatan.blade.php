@@ -191,26 +191,28 @@
 
 
     <div class="catatan">
-        <div class="container">
 
-            <div class="row profile">
-                <center>
-                    <div class="col-md-3">
-                        <div class="img-container">
-                            <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
-                        </div>
-                        <br>
-                    </div>89
-                </center>
-
-            </div>
-
-        </div>
         <div class="container mt-3 mb-4">
             <form action="/submitcatatan" onsubmit="return (validate());" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <div class="container">
+
+                    <div class="row profile">
+                        <center>
+                            <div class="col-md-3">
+                                <div class="img-container">
+                                    @foreach ($listakunpasien as $u)
+                                    <img alt="docpic" style="vertical-align:middle" id= "docpic" src="{{ asset('data_file/' . $u->fotopasien) }}">
+                                    <h2 style="padding-top: 20px"><input name="idpasien" type="hidden" value="{{ $u->idpasien }}"> {{ $u->namapasien }}</h2>
+                                    @endforeach
+                                </div>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
                 {{-- value="{{ $s->sipp }} --}}
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label for="nama" class="col-sm-3 control-label">Nama Pasien:</label>
                     <div class='col-sm-8 input-group date' id='id'>
                         <select class="form-control" name="id" required>
@@ -219,7 +221,7 @@
                                 @endforeach
                         </select>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group row">
                     <label for="comment">Catatan:</label>
