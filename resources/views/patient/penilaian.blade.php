@@ -199,7 +199,9 @@
                 <center>
                     <div class="col-md-3">
                         <div class="img-container">
-                            <img alt="docpic" style="vertical-align:middle" src="/images/doctorprofile3.png">
+                            @foreach ($listakunpsikolog as $p)
+                            <img alt="docpic" style="vertical-align:middle" id= "docpic" src="{{ asset('data_file/' . $p->fotopsikolog) }}">
+                            @endforeach
                         </div>
                 </center>
 

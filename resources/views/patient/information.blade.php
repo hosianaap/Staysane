@@ -17,13 +17,12 @@
             order: 0;
             flex-grow: 0;
         }
-        img{
+
+        img {
             width: 100px;
             height: 100px;
             border-radius: 25px
         }
-
-
     </style>
     <nav id="navbar" class="nav-menu navbar">
         <ul>
@@ -44,7 +43,7 @@
                     <div class="row m-0">
                         <div class="d-flex justify-content- align-content-center">
                             @foreach ($listakunpsikolog as $s)
-                            <img src="{{asset('data_file/'. $s->fotopsikolog)}}">
+                                <img src="{{ asset('data_file/' . $s->fotopsikolog) }}">
                         </div>
                     </div>
 
@@ -66,28 +65,15 @@
                             <p class="border">{{ $s->experience }} years</p>
                         </b><br><br>
                     </div>
-                    <div class="row m-0">
-                        <div class="col-12 px-4">
-                            <br><br>
-                            <div class="d-flex justify-content-between mb-2">
-                            </div>
-
-                            <div class="d-flex justify-content-between mb-3">
-                                <p class="textmuted fw-bold"></p>
-                                <div class="d-flex align-text-top ">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
-            <div class="col-lg-5 p-0 ps-lg-4">
-                <div class="row m-0">
-                    <div class="col-12 px-0">
-                            <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
-                            </div>
-                            <div class="col-lg-5 p-0 ps-lg-4">
-                                <div class="row m-0">
+                <div class="d-flex" style="padding-top: 40px">
+                    <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
+                    </div>
+
+                    <div style="padding-left: 40px">
+                        <div class="btn payment-bttn"><a href="/patient/doctor-info/add" style="color: white"> Select
+                                Schedule</a>
                         </div>
                     </div>
                 </div>
@@ -106,25 +92,10 @@
                                     <h5>Consultation Type</h5><br>
                             </div>
                             </div> --}}
-                         {{-- </div>  --}}
-                        {{-- @endforeach --}}
-                        <div class="row m-0">
-                            <div class="d-flex flex-row-reverse" style="padding-top: 100px">
-                                {{-- <div class="btn payment-bttn"><a href="/patient/payment" style="color: white"> Book </a>
-                                </div> --}}
-                            </div><br>
-                            <div style="padding-left: 40px">
-                                <a href="/patient/doctor-info/add"><div class="btn payment-bttn"> Select Schedule
-                                </div></a>
-                        </div>
-                    </div>
-                        </a>
-                        @endforeach
-                    </div>
-                </div>
+                {{-- </div> --}}
+                {{-- @endforeach --}}
+
             </div>
         </div>
     </div>
-    </div>
-
 @endsection
